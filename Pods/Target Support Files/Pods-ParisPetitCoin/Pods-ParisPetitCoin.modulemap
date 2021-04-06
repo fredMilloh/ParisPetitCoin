@@ -1,0 +1,6 @@
+framework module Pods_ParisPetitCoin {
+  umbrella header "Pods-ParisPetitCoin-umbrella.h"
+
+  export *
+  module * { export * }
+}
