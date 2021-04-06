@@ -17,9 +17,14 @@ class Service {
     }
     
     func getDataSet() {
-        AF.request(self.baseUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
-            .response { (responseData) in
-                print("nous obtenons la réponse")
+        AF.request(self.baseUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).response { (responseData) in
+            guard let dataIn = responseData.data else { return }
+                    do {
+                        let toilettes = try JSONDecoder().decode([Toilette].self, from: dataIn)
+                        print("Toilettes == \(toilettes)")
+                    } catch {
+                        print("Erreur de décodage == \(error)")
+                    }
             }
     }
 }
