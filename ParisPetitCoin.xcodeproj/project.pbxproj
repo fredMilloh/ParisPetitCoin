@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		B6CF4E72261C62050005CE89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6CF4E70261C62050005CE89 /* Main.storyboard */; };
 		B6CF4E74261C620B0005CE89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6CF4E73261C620B0005CE89 /* Assets.xcassets */; };
 		B6CF4E77261C620B0005CE89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6CF4E75261C620B0005CE89 /* LaunchScreen.storyboard */; };
+		B6E13828261C9CBD00F5B9A7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E13827261C9CBD00F5B9A7 /* Service.swift */; };
+		B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1382A261CA4D100F5B9A7 /* Toilette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B6CF4E73261C620B0005CE89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6CF4E76261C620B0005CE89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6CF4E78261C620B0005CE89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6E13827261C9CBD00F5B9A7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B6E1382A261CA4D100F5B9A7 /* Toilette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toilette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,15 +75,57 @@
 		B6CF4E69261C62050005CE89 /* ParisPetitCoin */ = {
 			isa = PBXGroup;
 			children = (
-				B6CF4E6A261C62050005CE89 /* AppDelegate.swift */,
-				B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */,
-				B6CF4E6E261C62050005CE89 /* ViewController.swift */,
-				B6CF4E70261C62050005CE89 /* Main.storyboard */,
-				B6CF4E73261C620B0005CE89 /* Assets.xcassets */,
-				B6CF4E75261C620B0005CE89 /* LaunchScreen.storyboard */,
 				B6CF4E78261C620B0005CE89 /* Info.plist */,
+				B6E13823261C9C1500F5B9A7 /* SERVICES */,
+				B6E13822261C9BFE00F5B9A7 /* Supporting Files */,
+				B6E13820261C9BB200F5B9A7 /* MODELS */,
+				B6E1381F261C9BA500F5B9A7 /* VIEWS */,
+				B6E1381E261C9B9200F5B9A7 /* CONTROLLERS */,
 			);
 			path = ParisPetitCoin;
+			sourceTree = "<group>";
+		};
+		B6E1381E261C9B9200F5B9A7 /* CONTROLLERS */ = {
+			isa = PBXGroup;
+			children = (
+				B6CF4E6E261C62050005CE89 /* ViewController.swift */,
+			);
+			path = CONTROLLERS;
+			sourceTree = "<group>";
+		};
+		B6E1381F261C9BA500F5B9A7 /* VIEWS */ = {
+			isa = PBXGroup;
+			children = (
+				B6CF4E70261C62050005CE89 /* Main.storyboard */,
+				B6CF4E75261C620B0005CE89 /* LaunchScreen.storyboard */,
+			);
+			path = VIEWS;
+			sourceTree = "<group>";
+		};
+		B6E13820261C9BB200F5B9A7 /* MODELS */ = {
+			isa = PBXGroup;
+			children = (
+				B6E1382A261CA4D100F5B9A7 /* Toilette.swift */,
+			);
+			path = MODELS;
+			sourceTree = "<group>";
+		};
+		B6E13822261C9BFE00F5B9A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6CF4E6A261C62050005CE89 /* AppDelegate.swift */,
+				B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */,
+				B6CF4E73261C620B0005CE89 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6E13823261C9C1500F5B9A7 /* SERVICES */ = {
+			isa = PBXGroup;
+			children = (
+				B6E13827261C9CBD00F5B9A7 /* Service.swift */,
+			);
+			path = SERVICES;
 			sourceTree = "<group>";
 		};
 		C096FF360DCD34471186A04D /* Pods */ = {
@@ -88,7 +134,6 @@
 				62A7CE30DE57E12585B9E13E /* Pods-ParisPetitCoin.debug.xcconfig */,
 				3AE6A4886E6D259E47801CD4 /* Pods-ParisPetitCoin.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,7 +252,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6CF4E6F261C62050005CE89 /* ViewController.swift in Sources */,
+				B6E13828261C9CBD00F5B9A7 /* Service.swift in Sources */,
 				B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */,
+				B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */,
 				B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
