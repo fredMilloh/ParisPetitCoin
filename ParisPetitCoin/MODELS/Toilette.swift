@@ -17,9 +17,9 @@ struct Toilette: Decodable {
 
 struct Fields: Decodable {
     let statut: String?
-    let arrondissement: String
-    let adresse: String
-    let geo_point_2d : [Double]
+    let arrondissement: String?
+    let adresse: String?
+    let geo_point_2d : [Double]?
     
     enum CodingKeys: String, CodingKey {
         case statut = "statut"

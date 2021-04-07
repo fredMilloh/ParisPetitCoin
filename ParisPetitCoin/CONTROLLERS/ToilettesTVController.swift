@@ -21,16 +21,18 @@ class ToilettesTVController: UITableViewController {
         
         func receiveData() {
             let service = Service()
-            service.getDataSet()
-            service.completionHandler { [weak self] (toilettes, status, message) in
-                if status {
-                    guard let self = self else { return }
-                    guard let _toilettes = toilettes else { return }
-                    self.toilettes = _toilettes
+            service.getDataSet { [weak self] (statut, toilettes) in
+                guard let self = self else { return }
+                if statut {
+                    guard let toilettes = toilettes else { return }
+                    self.toilettes = toilettes
                     self.toilettesTable.reloadData()
+                } else {
+                    self.toilettes = []
                 }
-        }
-
+                
+            }
+            
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -54,8 +56,8 @@ class ToilettesTVController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToiletteCell", for: indexPath)
         let toilette = toilettes[indexPath.row].fields
-        cell.textLabel?.text = toilette.adresse + " " + toilette.arrondissement
-        cell.detailTextLabel?.text = toilette.statut
+        cell.textLabel?.text = (toilette.adresse ?? "") + " " + (toilette.arrondissement ?? "")
+        cell.detailTextLabel?.text = toilette.statut ?? ""
         
         return cell
     }
