@@ -48,6 +48,14 @@ extension ViewController: CLLocationManagerDelegate {
         
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
+        
+        setupPin(center)
+    }
+    
+    func setupPin(_ center: CLLocationCoordinate2D) {
+        let pin = MKPointAnnotation()
+        pin.coordinate = center
+        mapView.addAnnotation(pin)
     }
     
 }
