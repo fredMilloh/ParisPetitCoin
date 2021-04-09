@@ -31,15 +31,25 @@
                                     <segue destination="LxF-Yh-xXC" kind="showDetail" id="srw-SQ-0jG"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVo-J3-yum">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sVo-J3-yum" secondAttribute="bottom" id="46y-aZ-cUI"/>
+                            <constraint firstItem="sVo-J3-yum" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H5V-4p-K3T"/>
                             <constraint firstItem="JZK-80-IPl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="LVh-ag-kp7"/>
                             <constraint firstItem="JZK-80-IPl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="300" id="QMk-A0-zdB"/>
+                            <constraint firstItem="sVo-J3-yum" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m3z-yQ-PeJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sVo-J3-yum" secondAttribute="trailing" id="mOq-b0-QRJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JZK-80-IPl" secondAttribute="trailing" constant="20" id="sMr-xp-S3b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="sVo-J3-yum" id="CtM-zG-ktR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

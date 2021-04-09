@@ -16,7 +16,8 @@ class Service {
     
     func getDataSet(callback: @escaping toilettesCallBack) {
         
-        AF.request(self.baseUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).response { (responseData) in
+        AF.request(self.baseUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
+            .response { (responseData) in
             guard let dataIn = responseData.data else {
                 callback(false, nil)
                 return }
