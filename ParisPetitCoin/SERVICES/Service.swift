@@ -23,7 +23,6 @@ class Service {
                 return }
                     do {
                         let toilettes = try JSONDecoder().decode([Toilette].self, from: dataIn)
-                        print("Toilettes == \(toilettes)")
                         callback(true, toilettes)
                     } catch {
                         callback(false, nil)

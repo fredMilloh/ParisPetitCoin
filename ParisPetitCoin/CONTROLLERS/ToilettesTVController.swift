@@ -30,7 +30,6 @@ class ToilettesTVController: UITableViewController {
                 } else {
                     self.toilettes = []
                 }
-                
             }
             
         // Uncomment the following line to preserve selection between presentations
@@ -39,8 +38,8 @@ class ToilettesTVController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    // MARK: - Table view data source
+    
+// MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -60,6 +59,16 @@ class ToilettesTVController: UITableViewController {
         cell.detailTextLabel?.text = toilette.statut ?? ""
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //cell pour afficher popup info = adresse, status
+        /*
+        let detailMovie = self.storyboard?.instantiateViewController(identifier: "ToDetail") as! DetailsController
+        let movieSelected = movies[indexPath.row]
+        detailMovie.movieSelected = movieSelected
+        self.navigationController?.pushViewController(detailMovie, animated: true)
+ */
     }
     
 
