@@ -38,7 +38,6 @@ class ViewController: UIViewController {
                     guard let toilettes = toilettes else { return }
                     self.toilettes = toilettes
                     self.createPinToilette(toilettes)
-                   
                     
                 } else {
                     self.toilettes = []
@@ -48,16 +47,14 @@ class ViewController: UIViewController {
     
     func createPinToilette(_ toilettes: [Toilette]) {
         for toilette in toilettes {
-           
             guard let geoPoint = toilette.fields.geo_point_2d else { return }
-            //guard let statut = toilette.fields.statut else { return }
-            
             let latitude = geoPoint[0]
             let longitude = geoPoint[1]
-            let toilettePin = MKPointAnnotation()
-             toilettePin.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            self.mapView.addAnnotation(toilettePin)
-           
+            
+            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let pin = MapPin(title: "ICI", locationName: "device location", coordinate: coordinate)
+            
+            self.mapView.addAnnotation(pin)
         }
     }
     
@@ -88,22 +85,20 @@ extension ViewController: CLLocationManagerDelegate {
 extension ViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "myPin"
-        if annotation.isKind(of: MKUserLocation.self) {
+        let identifier = "toilette"
+        
+        let annotationView: MKAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        
+        annotationView.canShowCallout = true
+        
+        if annotation is MKUserLocation {
+            return nil
+        } else if annotation is MapPin {
+            annotationView.image = UIImage(imageLiteralResourceName: "toilette")
+            return annotationView
+        } else {
             return nil
         }
-        var annotationView: MKMarkerAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
-            
-        if annotationView == nil {
-            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-        }
-        
-        //if status == "ouvert" { etc ...
-        annotationView?.glyphText = "🤴🏻"
-        annotationView?.markerTintColor = .green
-        
-        return annotationView
-        
     }
 }
  

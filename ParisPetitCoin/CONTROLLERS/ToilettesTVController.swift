@@ -56,7 +56,7 @@ class ToilettesTVController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToiletteCell", for: indexPath)
         let toilette = toilettes[indexPath.row].fields
         cell.textLabel?.text = (toilette.adresse ?? "") + " " + (toilette.arrondissement ?? "")
-        cell.detailTextLabel?.text = toilette.statut ?? ""
+        cell.detailTextLabel?.text = toilette.state ?? ""
         
         return cell
     }
