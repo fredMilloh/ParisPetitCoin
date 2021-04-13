@@ -20,8 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupManager()
         receiveData()
-        //let service = Service()
-        //service.getDataSet()
+        mapView.delegate = self
     }
     
     func setupManager() {
@@ -38,32 +37,30 @@ class ViewController: UIViewController {
                 if statut {
                     guard let toilettes = toilettes else { return }
                     self.toilettes = toilettes
-                    self.createPinToilettes(toilettes)
+                    self.createPinToilette(toilettes)
+                   
+                    
                 } else {
                     self.toilettes = []
                 }
             }
     }
     
-    func createPinToilettes(_ toilettes: [Toilette]) {
+    func createPinToilette(_ toilettes: [Toilette]) {
         for toilette in toilettes {
-            guard let geoPoint = toilette.fields.geo_point_2d else { return }
            
+            guard let geoPoint = toilette.fields.geo_point_2d else { return }
+            //guard let statut = toilette.fields.statut else { return }
+            
             let latitude = geoPoint[0]
             let longitude = geoPoint[1]
-            print("latitude == \(latitude)", "longitude == \(longitude)")
-            setupToilettesPin(latitude, longitude)
-            
+            let toilettePin = MKPointAnnotation()
+             toilettePin.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            self.mapView.addAnnotation(toilettePin)
+           
         }
-        
     }
     
-    func setupToilettesPin(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) {
-        let pin = MKPointAnnotation()
-        pin.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        mapView.addAnnotation(pin)
-    }
-
     @IBAction func listButton(_ sender: UIButton) {
     }
     
@@ -71,27 +68,42 @@ class ViewController: UIViewController {
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            locationManager.startUpdatingLocation()
+            locationManager.stopUpdatingLocation()
             configureRegion(location)
         }
     }
     
     func configureRegion(_ location: CLLocation) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        let center = CLLocationCoordinate2D(latitude: 48.856614, longitude: 2.3522219)
-        //let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: span)
         
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
         
-        setupUserPin(center)
-    }
-    
-    func setupUserPin(_ center: CLLocationCoordinate2D) {
-        let pin = MKPointAnnotation()
-        pin.coordinate = center
-        mapView.addAnnotation(pin)
     }
     
 }
+
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "myPin"
+        if annotation.isKind(of: MKUserLocation.self) {
+            return nil
+        }
+        var annotationView: MKMarkerAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+            
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        }
+        
+        //if status == "ouvert" { etc ...
+        annotationView?.glyphText = "🤴🏻"
+        annotationView?.markerTintColor = .green
+        
+        return annotationView
+        
+    }
+}
+ 
