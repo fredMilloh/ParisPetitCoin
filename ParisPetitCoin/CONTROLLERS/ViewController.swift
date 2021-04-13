@@ -89,7 +89,13 @@ extension ViewController: MKMapViewDelegate {
         
         let annotationView: MKAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         
-        annotationView.canShowCallout = true
+        annotationView.canShowCallout = true  //popup on pin
+        
+        if #available(iOS 11.0, *) {
+            annotationView.clusteringIdentifier = "PinCluster"
+        } else {
+            //
+        }
         
         if annotation is MKUserLocation {
             return nil
