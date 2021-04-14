@@ -50,9 +50,11 @@ class ViewController: UIViewController {
             guard let geoPoint = toilette.fields.geo_point_2d else { return }
             let latitude = geoPoint[0]
             let longitude = geoPoint[1]
-            
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            let pin = MapPin(title: "ICI", locationName: "device location", coordinate: coordinate)
+            
+            guard let address = toilette.fields.adresse else { return }
+            
+            let pin = MapPin(title: address, locationName: "blabla", coordinate: coordinate)
             
             self.mapView.addAnnotation(pin)
         }
@@ -78,33 +80,49 @@ extension ViewController: CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
         
+        let pin = MKPointAnnotation()
+        pin.coordinate = center
+        pin.title = "I'm Here"
+        mapView.addAnnotation(pin)
+        
     }
     
 }
 
 extension ViewController: MKMapViewDelegate {
-    
+ 
+//setup annotation
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "toilette"
+    
+    //setup annotation
+        guard annotation is MapPin else { return nil }
         
-        let annotationView: MKAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-        
-        annotationView.canShowCallout = true  //popup on pin
-        
-        if #available(iOS 11.0, *) {
-            annotationView.clusteringIdentifier = "PinCluster"
+        let identifier = "MapPin"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+    
+    //setup annotationView
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            //add annotationView on annotation
+            annotationView?.canShowCallout = true
+            //add button on the right annotationView
+            let button = UIButton(type: .detailDisclosure)
+            annotationView?.rightCalloutAccessoryView = button
+            
+            //indicate number of cumulate pins
+            if #available(iOS 11.0, *) {
+                annotationView!.clusteringIdentifier = ""
+            } else {
+                //
+            }
+            
         } else {
-            //
+            annotationView?.annotation = annotation
         }
+        //annotationView?.pinTintColor = .green
+        annotationView?.image = UIImage(imageLiteralResourceName: "toiletteOpen")
         
-        if annotation is MKUserLocation {
-            return nil
-        } else if annotation is MapPin {
-            annotationView.image = UIImage(imageLiteralResourceName: "toilette")
-            return annotationView
-        } else {
-            return nil
-        }
+        return annotationView
     }
 }
  
