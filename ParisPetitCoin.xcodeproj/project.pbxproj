@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		274BC867C284F2C674E6A420 /* Pods_ParisPetitCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */; };
-		B66D7EB9262613260026F25B /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D7EB8262613260026F25B /* MapPin.swift */; };
 		B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6A261C62050005CE89 /* AppDelegate.swift */; };
 		B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */; };
 		B6CF4E6F261C62050005CE89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6E261C62050005CE89 /* ViewController.swift */; };
@@ -24,7 +23,6 @@
 		0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParisPetitCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE6A4886E6D259E47801CD4 /* Pods-ParisPetitCoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisPetitCoin.release.xcconfig"; path = "Target Support Files/Pods-ParisPetitCoin/Pods-ParisPetitCoin.release.xcconfig"; sourceTree = "<group>"; };
 		62A7CE30DE57E12585B9E13E /* Pods-ParisPetitCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisPetitCoin.debug.xcconfig"; path = "Target Support Files/Pods-ParisPetitCoin/Pods-ParisPetitCoin.debug.xcconfig"; sourceTree = "<group>"; };
-		B66D7EB8262613260026F25B /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		B6CF4E67261C62050005CE89 /* ParisPetitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParisPetitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CF4E6A261C62050005CE89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				B6E1382A261CA4D100F5B9A7 /* Toilette.swift */,
-				B66D7EB8262613260026F25B /* MapPin.swift */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -259,7 +256,6 @@
 			files = (
 				B6CF4E6F261C62050005CE89 /* ViewController.swift in Sources */,
 				B6E13828261C9CBD00F5B9A7 /* Service.swift in Sources */,
-				B66D7EB9262613260026F25B /* MapPin.swift in Sources */,
 				B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */,
 				B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */,
 				B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */,

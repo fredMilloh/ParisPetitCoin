@@ -52,11 +52,16 @@ class ViewController: UIViewController {
             let longitude = geoPoint[1]
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             
+            let state = toilette.fields.state ?? ""
+            
             guard let address = toilette.fields.adresse else { return }
             
-            let pin = MapPin(title: address, locationName: "blabla", coordinate: coordinate)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = address
+            annotation.subtitle = state
             
-            self.mapView.addAnnotation(pin)
+            self.mapView.addAnnotation(annotation)
         }
     }
     
@@ -84,7 +89,6 @@ extension ViewController: CLLocationManagerDelegate {
         pin.coordinate = center
         pin.title = "I'm Here"
         mapView.addAnnotation(pin)
-        
     }
     
 }
@@ -93,35 +97,22 @@ extension ViewController: MKMapViewDelegate {
  
 //setup annotation
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    
-    //setup annotation
-        guard annotation is MapPin else { return nil }
         
-        let identifier = "MapPin"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
-    
-    //setup annotationView
-        if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            //add annotationView on annotation
-            annotationView?.canShowCallout = true
-            //add button on the right annotationView
-            let button = UIButton(type: .detailDisclosure)
-            annotationView?.rightCalloutAccessoryView = button
-            
-            //indicate number of cumulate pins
-            if #available(iOS 11.0, *) {
-                annotationView!.clusteringIdentifier = ""
-            } else {
-                //
-            }
-            
-        } else {
-            annotationView?.annotation = annotation
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "")
+        
+        let subtitle = annotation.subtitle ?? ""
+        switch subtitle {
+        case "":
+            annotationView.tintColor = .black
+        case "Ouvert":
+            annotationView.markerTintColor = .green
+            annotationView.glyphImage = UIImage(named: "toilet50")
+        case "Fermé":
+            annotationView.markerTintColor = .red
+            annotationView.glyphImage = UIImage(named: "toilet50")
+        default:
+            annotationView.tintColor = .blue
         }
-        //annotationView?.pinTintColor = .green
-        annotationView?.image = UIImage(imageLiteralResourceName: "toiletteOpen")
-        
         return annotationView
     }
 }

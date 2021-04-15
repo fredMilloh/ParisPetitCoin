@@ -28,8 +28,3 @@ struct Fields: Decodable {
         case geo_point_2d = "geo_point_2d"
     }
 }
-enum State: String {
-    case open = "Ouvert"
-    case close = "Fermé"
-}
-
