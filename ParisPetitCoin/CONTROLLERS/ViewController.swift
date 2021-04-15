@@ -94,24 +94,34 @@ extension ViewController: CLLocationManagerDelegate {
 }
 
 extension ViewController: MKMapViewDelegate {
- 
-//setup annotation
+     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
+    
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "")
         
-        let subtitle = annotation.subtitle ?? ""
-        switch subtitle {
-        case "":
-            annotationView.tintColor = .black
+            //add bubble info on annotationView
+            annotationView.canShowCallout = true
+            //add button on the right annotationView
+            let button = UIButton(type: .detailDisclosure)
+            annotationView.rightCalloutAccessoryView = button
+            
+            //indicate number of cumulate pins
+            if #available(iOS 11.0, *) {
+                annotationView.clusteringIdentifier = ""
+            } else {
+                annotationView.annotation = annotation
+            }
+       
+        switch annotation.subtitle {
         case "Ouvert":
-            annotationView.markerTintColor = .green
+            annotationView.markerTintColor = .systemGreen
             annotationView.glyphImage = UIImage(named: "toilet50")
         case "Fermé":
-            annotationView.markerTintColor = .red
+            annotationView.markerTintColor = .systemRed
             annotationView.glyphImage = UIImage(named: "toilet50")
         default:
-            annotationView.tintColor = .blue
+            annotationView.markerTintColor = .systemBlue
+            annotationView.glyphImage = UIImage(named: "questionMark30")
         }
         return annotationView
     }
