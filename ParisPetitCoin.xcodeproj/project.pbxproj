@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		274BC867C284F2C674E6A420 /* Pods_ParisPetitCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */; };
+		B676B7742629C7F40001D46F /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676B7732629C7F40001D46F /* LoadableView.swift */; };
+		B676B7782629D3940001D46F /* DetailToilette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676B7772629D3940001D46F /* DetailToilette.swift */; };
+		B676B77B2629D3BF0001D46F /* DetailToilette.xib in Resources */ = {isa = PBXBuildFile; fileRef = B676B77A2629D3BF0001D46F /* DetailToilette.xib */; };
 		B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6A261C62050005CE89 /* AppDelegate.swift */; };
 		B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */; };
 		B6CF4E6F261C62050005CE89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6E261C62050005CE89 /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 		0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParisPetitCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE6A4886E6D259E47801CD4 /* Pods-ParisPetitCoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisPetitCoin.release.xcconfig"; path = "Target Support Files/Pods-ParisPetitCoin/Pods-ParisPetitCoin.release.xcconfig"; sourceTree = "<group>"; };
 		62A7CE30DE57E12585B9E13E /* Pods-ParisPetitCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisPetitCoin.debug.xcconfig"; path = "Target Support Files/Pods-ParisPetitCoin/Pods-ParisPetitCoin.debug.xcconfig"; sourceTree = "<group>"; };
+		B676B7732629C7F40001D46F /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
+		B676B7772629D3940001D46F /* DetailToilette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailToilette.swift; sourceTree = "<group>"; };
+		B676B77A2629D3BF0001D46F /* DetailToilette.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailToilette.xib; sourceTree = "<group>"; };
 		B6CF4E67261C62050005CE89 /* ParisPetitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParisPetitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CF4E6A261C62050005CE89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +62,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B676B77D2629D40D0001D46F /* INTERFACES */ = {
+			isa = PBXGroup;
+			children = (
+				B6CF4E70261C62050005CE89 /* Main.storyboard */,
+				B6CF4E75261C620B0005CE89 /* LaunchScreen.storyboard */,
+				B676B77A2629D3BF0001D46F /* DetailToilette.xib */,
+			);
+			path = INTERFACES;
+			sourceTree = "<group>";
+		};
 		B6CF4E5E261C62050005CE89 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B6CF4E78261C620B0005CE89 /* Info.plist */,
+				B676B77D2629D40D0001D46F /* INTERFACES */,
 				B6E13823261C9C1500F5B9A7 /* SERVICES */,
 				B6E13822261C9BFE00F5B9A7 /* Supporting Files */,
 				B6E13820261C9BB200F5B9A7 /* MODELS */,
@@ -99,8 +116,8 @@
 		B6E1381F261C9BA500F5B9A7 /* VIEWS */ = {
 			isa = PBXGroup;
 			children = (
-				B6CF4E70261C62050005CE89 /* Main.storyboard */,
-				B6CF4E75261C620B0005CE89 /* LaunchScreen.storyboard */,
+				B676B7732629C7F40001D46F /* LoadableView.swift */,
+				B676B7772629D3940001D46F /* DetailToilette.swift */,
 			);
 			path = VIEWS;
 			sourceTree = "<group>";
@@ -199,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B676B77B2629D3BF0001D46F /* DetailToilette.xib in Resources */,
 				B6CF4E77261C620B0005CE89 /* LaunchScreen.storyboard in Resources */,
 				B6CF4E74261C620B0005CE89 /* Assets.xcassets in Resources */,
 				B6CF4E72261C62050005CE89 /* Main.storyboard in Resources */,
@@ -258,7 +276,9 @@
 				B6E13828261C9CBD00F5B9A7 /* Service.swift in Sources */,
 				B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */,
 				B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */,
+				B676B7782629D3940001D46F /* DetailToilette.swift in Sources */,
 				B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */,
+				B676B7742629C7F40001D46F /* LoadableView.swift in Sources */,
 				B6E1383A261CBEFE00F5B9A7 /* ToilettesTVController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

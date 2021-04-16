@@ -47,13 +47,14 @@ class ViewController: UIViewController {
     
     func createPinToilette(_ toilettes: [Toilette]) {
         for toilette in toilettes {
+            print("url == \(toilette.fields.url ?? "sans url")")
             guard let geoPoint = toilette.fields.geo_point_2d else { return }
             let latitude = geoPoint[0]
             let longitude = geoPoint[1]
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             
-            let state = toilette.fields.state ?? ""
-            
+            let state = toilette.fields.state ?? "More informations.....  →"
+          
             guard let address = toilette.fields.adresse else { return }
             
             let annotation = MKPointAnnotation()
@@ -102,7 +103,7 @@ extension ViewController: MKMapViewDelegate {
             //add bubble info on annotationView
             annotationView.canShowCallout = true
             //add button on the right annotationView
-            let button = UIButton(type: .detailDisclosure)
+        let button = UIButton(type: .detailDisclosure)
             annotationView.rightCalloutAccessoryView = button
             
             //indicate number of cumulate pins
