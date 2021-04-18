@@ -56,11 +56,9 @@ class ViewController: UIViewController {
             let state = toilette.fields.state ?? "More informations.....  →"
           
             guard let address = toilette.fields.adresse else { return }
+            //guard let district = toilette.fields.arrondissement else { return }
             
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            annotation.title = address
-            annotation.subtitle = state
+            let annotation = ToilettePin(title: address, subtitle: state, coordinate: coordinate)
             
             self.mapView.addAnnotation(annotation)
         }
@@ -91,7 +89,6 @@ extension ViewController: CLLocationManagerDelegate {
         pin.title = "I'm Here"
         mapView.addAnnotation(pin)
     }
-    
 }
 
 extension ViewController: MKMapViewDelegate {
@@ -125,6 +122,16 @@ extension ViewController: MKMapViewDelegate {
             annotationView.glyphImage = UIImage(named: "questionMark30")
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let toilettePin = view.annotation as? ToilettePin else { return }
+        
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        
+        toilettePin.mapItem?.openInMaps(launchOptions: launchOptions)
+        
+        
     }
 }
  
