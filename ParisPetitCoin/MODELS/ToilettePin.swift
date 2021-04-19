@@ -25,6 +25,7 @@ class ToilettePin: NSObject, MKAnnotation {
     var mapItem: MKMapItem? {
         guard let location = title else { return nil }
         
+        
         let addressDict = [CNPostalAddressStreetKey: location]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
         let mapItem = MKMapItem(placemark: placemark)

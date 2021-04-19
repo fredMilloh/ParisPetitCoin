@@ -47,16 +47,15 @@ class ViewController: UIViewController {
     
     func createPinToilette(_ toilettes: [Toilette]) {
         for toilette in toilettes {
-            print("url == \(toilette.fields.url ?? "sans url")")
-            guard let geoPoint = toilette.fields.geo_point_2d else { return }
-            let latitude = geoPoint[0]
-            let longitude = geoPoint[1]
-            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             
-            let state = toilette.fields.state ?? "More informations.....  →"
+            guard let geoPoint = toilette.fields.geo_point_2d else { return }
+                let latitude = geoPoint[0]
+                let longitude = geoPoint[1]
+            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            guard let horaire = toilette.fields.horaire else { return }
+            let state = toilette.fields.state ?? horaire
           
             guard let address = toilette.fields.adresse else { return }
-            //guard let district = toilette.fields.arrondissement else { return }
             
             let annotation = ToilettePin(title: address, subtitle: state, coordinate: coordinate)
             
@@ -82,12 +81,16 @@ extension ViewController: CLLocationManagerDelegate {
         let region = MKCoordinateRegion(center: center, span: span)
         
         mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
         
         let pin = MKPointAnnotation()
         pin.coordinate = center
+        pin.subtitle = "me"
         pin.title = "I'm Here"
         mapView.addAnnotation(pin)
+        
+        mapView.showsCompass = true
+        
+        
     }
 }
 
@@ -109,7 +112,7 @@ extension ViewController: MKMapViewDelegate {
             } else {
                 annotationView.annotation = annotation
             }
-       
+        
         switch annotation.subtitle {
         case "Ouvert":
             annotationView.markerTintColor = .systemGreen
@@ -117,6 +120,9 @@ extension ViewController: MKMapViewDelegate {
         case "Fermé":
             annotationView.markerTintColor = .systemRed
             annotationView.glyphImage = UIImage(named: "toilet50")
+        case "me":
+            annotationView.markerTintColor = .systemTeal
+            annotationView.glyphText = "😀"
         default:
             annotationView.markerTintColor = .systemBlue
             annotationView.glyphImage = UIImage(named: "questionMark30")

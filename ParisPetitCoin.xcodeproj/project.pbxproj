@@ -18,6 +18,7 @@
 		B6E13828261C9CBD00F5B9A7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E13827261C9CBD00F5B9A7 /* Service.swift */; };
 		B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1382A261CA4D100F5B9A7 /* Toilette.swift */; };
 		B6E1383A261CBEFE00F5B9A7 /* ToilettesTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E13839261CBEFE00F5B9A7 /* ToilettesTVController.swift */; };
+		B6FE4DA8262CAD2600E39864 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FE4DA7262CAD2600E39864 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B6E13827261C9CBD00F5B9A7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B6E1382A261CA4D100F5B9A7 /* Toilette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toilette.swift; sourceTree = "<group>"; };
 		B6E13839261CBEFE00F5B9A7 /* ToilettesTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToilettesTVController.swift; sourceTree = "<group>"; };
+		B6FE4DA7262CAD2600E39864 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6FE4DA8262CAD2600E39864 /* MapKit.framework in Frameworks */,
 				274BC867C284F2C674E6A420 /* Pods_ParisPetitCoin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +56,7 @@
 		4BC0191AD5E5A2EE355716AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6FE4DA7262CAD2600E39864 /* MapKit.framework */,
 				0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */,
 			);
 			name = Frameworks;
@@ -419,6 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZU2A8P99A;
 				INFOPLIST_FILE = ParisPetitCoin/Info.plist;
@@ -428,6 +433,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fred.ParisPetitCoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
