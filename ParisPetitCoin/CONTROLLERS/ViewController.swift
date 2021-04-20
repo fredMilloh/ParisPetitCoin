@@ -52,12 +52,50 @@ class ViewController: UIViewController {
                 let latitude = geoPoint[0]
                 let longitude = geoPoint[1]
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            guard let horaire = toilette.fields.horaire else { return }
-            let state = toilette.fields.state ?? horaire
-          
+            
             guard let address = toilette.fields.adresse else { return }
             
-            let annotation = ToilettePin(title: address, subtitle: state, coordinate: coordinate)
+            var status: String?
+            let type = toilette.fields.type ?? ""
+            let state = toilette.fields.state ?? ""
+            
+            switch type {
+            case "SANISETTES":
+                if state == "Ouvert" {
+                    status = "SOuvert"
+                } else {
+                    status = "SFermé"
+                }
+            case "URINOIR MOBILE":
+                if state == "Ouvert" {
+                    status = "UMOuvert"
+                } else {
+                    status = "UMFermé"
+                }
+            case "URINOIR":
+                if state == "Ouvert" {
+                    status = "UOuvert"
+                } else {
+                    status = "UFermé"
+                }
+            case "CABINE MOBILE":
+                if state == "Ouvert" {
+                    status = "CMOuvert"
+                } else {
+                    status = "CMFermé"
+                }
+            case "TOILETTES":
+                status = "toilettes"
+            default:
+                status = ""
+            }
+            
+            /*
+            if type == "URINOIR MOBILE" {
+                print("type == \(type), state == \(state), url == \(url), horaire == \(horaire), adresse == \(address)")
+            }
+            */
+            let annotation = ToilettePin(title: address, subtitle: status, coordinate: coordinate)
             
             self.mapView.addAnnotation(annotation)
         }
@@ -114,17 +152,31 @@ extension ViewController: MKMapViewDelegate {
             }
         
         switch annotation.subtitle {
-        case "Ouvert":
+        case "SOuvert":
             annotationView.markerTintColor = .systemGreen
             annotationView.glyphImage = UIImage(named: "toilet50")
-        case "Fermé":
+        case "SFermé":
             annotationView.markerTintColor = .systemRed
             annotationView.glyphImage = UIImage(named: "toilet50")
+        case "UMOuvert":
+            annotationView.markerTintColor = .systemGreen
+        case "UMFermé":
+            annotationView.markerTintColor = .systemRed
+        case "UOuvert":
+            annotationView.markerTintColor = .systemGreen
+        case "UFermé":
+            annotationView.markerTintColor = .systemRed
+        case "CMOuvert":
+            annotationView.markerTintColor = .systemGreen
+        case "CMFermé":
+            annotationView.markerTintColor = .systemRed
+        case "toilettes":
+            annotationView.markerTintColor = .systemGray
         case "me":
-            annotationView.markerTintColor = .systemTeal
+            annotationView.markerTintColor = .systemBlue
             annotationView.glyphText = "😀"
         default:
-            annotationView.markerTintColor = .systemBlue
+            annotationView.markerTintColor = .systemTeal
             annotationView.glyphImage = UIImage(named: "questionMark30")
         }
         return annotationView
@@ -133,7 +185,8 @@ extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard let toilettePin = view.annotation as? ToilettePin else { return }
         
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
         
         toilettePin.mapItem?.openInMaps(launchOptions: launchOptions)
         
