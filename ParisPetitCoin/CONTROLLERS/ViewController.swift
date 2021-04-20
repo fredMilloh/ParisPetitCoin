@@ -90,11 +90,11 @@ class ViewController: UIViewController {
                 status = ""
             }
             
-            /*
-            if type == "URINOIR MOBILE" {
-                print("type == \(type), state == \(state), url == \(url), horaire == \(horaire), adresse == \(address)")
+            
+            if type == "URINOIR" {
+                print("type == \(type), state == \(state), adresse == \(address)")
             }
-            */
+            
             let annotation = ToilettePin(title: address, subtitle: status, coordinate: coordinate)
             
             self.mapView.addAnnotation(annotation)
@@ -154,24 +154,29 @@ extension ViewController: MKMapViewDelegate {
         switch annotation.subtitle {
         case "SOuvert":
             annotationView.markerTintColor = .systemGreen
-            annotationView.glyphImage = UIImage(named: "toilet50")
+            annotationView.glyphImage = UIImage(named: "sanisette")
         case "SFermé":
             annotationView.markerTintColor = .systemRed
-            annotationView.glyphImage = UIImage(named: "toilet50")
+            annotationView.glyphImage = UIImage(named: "sanisette")
         case "UMOuvert":
             annotationView.markerTintColor = .systemGreen
+            annotationView.glyphImage = UIImage(named: "man50")
         case "UMFermé":
             annotationView.markerTintColor = .systemRed
+            annotationView.glyphImage = UIImage(named: "man50")
         case "UOuvert":
             annotationView.markerTintColor = .systemGreen
+            annotationView.glyphImage = UIImage(named: "man50")
         case "UFermé":
             annotationView.markerTintColor = .systemRed
+            annotationView.glyphImage = UIImage(named: "man50")
         case "CMOuvert":
             annotationView.markerTintColor = .systemGreen
         case "CMFermé":
             annotationView.markerTintColor = .systemRed
         case "toilettes":
             annotationView.markerTintColor = .systemGray
+            annotationView.glyphImage = UIImage(named: "toilet50")
         case "me":
             annotationView.markerTintColor = .systemBlue
             annotationView.glyphText = "😀"
