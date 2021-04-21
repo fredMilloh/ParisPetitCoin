@@ -60,36 +60,23 @@ class ViewController: UIViewController {
             let state = toilette.fields.state ?? ""
             
             switch type {
-            case "SANISETTES":
-                if state == KEY_OPEN {
-                    status = KEY_SANIOPEN
-                } else {
-                    status = KEY_SANICLOSE
-                }
-            case "URINOIR MOBILE":
-                if state == KEY_OPEN {
-                    status = KEY_MOBURINOPEN
-                } else {
-                    status = KEY_MOBURINCLOSE
-                }
-            case "URINOIR":
-                if state == KEY_OPEN {
-                    status = KEY_URINOPEN
-                } else {
-                    status = KEY_URINCLOSE
-                }
-            case "CABINE MOBILE":
-                if state == KEY_OPEN {
-                    status = KEY_MOBCABINOPEN
-                } else {
-                    status = KEY_MOBCABINCLOSE
-                }
-            case "TOILETTES":
+            case KEY_SANISETTES:
+                if state == KEY_OPEN { status = KEY_SANIOPEN } else { status = KEY_SANICLOSE }
+            case KEY_MOBURINOIR:
+                if state == KEY_OPEN { status = KEY_MOBURINOPEN } else { status = KEY_MOBURINCLOSE }
+            case KEY_URINOIR:
+                if state == KEY_OPEN { status = KEY_URINOPEN } else { status = KEY_URINCLOSE }
+            case KEY_MOBCABIN:
+                if state == KEY_OPEN { status = KEY_MOBCABINOPEN } else { status = KEY_MOBCABINCLOSE }
+            case KEY_TOILETTES:
                 status = KEY_TOILETTES
+            case KEY_LAVATORY:
+                status = "madame pipi"
+            case KEY_WCPERM:
+                status = "a definir"
             default:
                 status = ""
             }
-            
             
             if type == "URINOIR" {
                 print("type == \(type), state == \(state), adresse == \(address)")
@@ -143,14 +130,14 @@ extension ViewController: MKMapViewDelegate {
             //add button on the right annotationView
         let button = UIButton(type: .detailDisclosure)
             annotationView.rightCalloutAccessoryView = button
-            
+            /*
             //indicate number of cumulate pins
             if #available(iOS 11.0, *) {
                 annotationView.clusteringIdentifier = ""
             } else {
                 annotationView.annotation = annotation
             }
-        
+            */
         switch annotation.subtitle {
         case KEY_SANIOPEN:
             annotationView.markerTintColor = .systemGreen
@@ -177,6 +164,10 @@ extension ViewController: MKMapViewDelegate {
         case KEY_TOILETTES:
             annotationView.markerTintColor = .systemGray
             annotationView.glyphImage = toilet
+        case "madame pipi":
+            annotationView.markerTintColor = .systemYellow
+        case "a definir":
+            annotationView.markerTintColor = .systemOrange
         case KEY_ME:
             annotationView.markerTintColor = .systemBlue
             annotationView.glyphText = "😀"
