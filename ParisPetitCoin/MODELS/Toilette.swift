@@ -36,3 +36,17 @@ struct Fields: Decodable {
         case type = "type"
     }
 }
+
+let KEY_OPEN = "Ouvert"
+let KEY_CLOSE = "Fermé"
+let KEY_SANIOPEN = "Open Sanisette"
+let KEY_SANICLOSE = "Closed Sanisette"
+let KEY_MOBURINOPEN = "Open Mobile Urinal"
+let KEY_MOBURINCLOSE = "Closed Mobile Urinal"
+let KEY_URINOPEN = "Open Urinal"
+let KEY_URINCLOSE = "Closed Urinal"
+let KEY_MOBCABINOPEN = "Open Mobile Cabin"
+let KEY_MOBCABINCLOSE = "Closed Mobile Cabin"
+let KEY_TOILETTES = "toilettes"
+    
+

@@ -32,3 +32,11 @@ class ToilettePin: NSObject, MKAnnotation {
         return mapItem
     }
 }
+
+let KEY_ME = "me"
+
+//Images
+let sanisette = UIImage(named: "sanisette")
+let urinoir = UIImage(named: "man50")
+let toilet = UIImage(named: "toilet50")
+let questionMark = UIImage(named: "questionMark30")

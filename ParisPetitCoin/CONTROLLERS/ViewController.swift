@@ -61,31 +61,31 @@ class ViewController: UIViewController {
             
             switch type {
             case "SANISETTES":
-                if state == "Ouvert" {
-                    status = "SOuvert"
+                if state == KEY_OPEN {
+                    status = KEY_SANIOPEN
                 } else {
-                    status = "SFermé"
+                    status = KEY_SANICLOSE
                 }
             case "URINOIR MOBILE":
-                if state == "Ouvert" {
-                    status = "UMOuvert"
+                if state == KEY_OPEN {
+                    status = KEY_MOBURINOPEN
                 } else {
-                    status = "UMFermé"
+                    status = KEY_MOBURINCLOSE
                 }
             case "URINOIR":
-                if state == "Ouvert" {
-                    status = "UOuvert"
+                if state == KEY_OPEN {
+                    status = KEY_URINOPEN
                 } else {
-                    status = "UFermé"
+                    status = KEY_URINCLOSE
                 }
             case "CABINE MOBILE":
-                if state == "Ouvert" {
-                    status = "CMOuvert"
+                if state == KEY_OPEN {
+                    status = KEY_MOBCABINOPEN
                 } else {
-                    status = "CMFermé"
+                    status = KEY_MOBCABINCLOSE
                 }
             case "TOILETTES":
-                status = "toilettes"
+                status = KEY_TOILETTES
             default:
                 status = ""
             }
@@ -122,7 +122,7 @@ extension ViewController: CLLocationManagerDelegate {
         
         let pin = MKPointAnnotation()
         pin.coordinate = center
-        pin.subtitle = "me"
+        pin.subtitle = KEY_ME
         pin.title = "I'm Here"
         mapView.addAnnotation(pin)
         
@@ -152,37 +152,37 @@ extension ViewController: MKMapViewDelegate {
             }
         
         switch annotation.subtitle {
-        case "SOuvert":
+        case KEY_SANIOPEN:
             annotationView.markerTintColor = .systemGreen
-            annotationView.glyphImage = UIImage(named: "sanisette")
-        case "SFermé":
+            annotationView.glyphImage = sanisette
+        case KEY_SANICLOSE:
             annotationView.markerTintColor = .systemRed
-            annotationView.glyphImage = UIImage(named: "sanisette")
-        case "UMOuvert":
+            annotationView.glyphImage = sanisette
+        case KEY_MOBURINOPEN:
             annotationView.markerTintColor = .systemGreen
-            annotationView.glyphImage = UIImage(named: "man50")
-        case "UMFermé":
+            annotationView.glyphImage = urinoir
+        case KEY_MOBURINCLOSE:
             annotationView.markerTintColor = .systemRed
-            annotationView.glyphImage = UIImage(named: "man50")
-        case "UOuvert":
+            annotationView.glyphImage = urinoir
+        case KEY_URINOPEN:
             annotationView.markerTintColor = .systemGreen
-            annotationView.glyphImage = UIImage(named: "man50")
-        case "UFermé":
+            annotationView.glyphImage = urinoir
+        case KEY_URINCLOSE:
             annotationView.markerTintColor = .systemRed
-            annotationView.glyphImage = UIImage(named: "man50")
-        case "CMOuvert":
+            annotationView.glyphImage = urinoir
+        case KEY_MOBCABINOPEN:
             annotationView.markerTintColor = .systemGreen
-        case "CMFermé":
+        case KEY_MOBCABINCLOSE:
             annotationView.markerTintColor = .systemRed
-        case "toilettes":
+        case KEY_TOILETTES:
             annotationView.markerTintColor = .systemGray
-            annotationView.glyphImage = UIImage(named: "toilet50")
-        case "me":
+            annotationView.glyphImage = toilet
+        case KEY_ME:
             annotationView.markerTintColor = .systemBlue
             annotationView.glyphText = "😀"
         default:
             annotationView.markerTintColor = .systemTeal
-            annotationView.glyphImage = UIImage(named: "questionMark30")
+            annotationView.glyphImage = questionMark
         }
         return annotationView
     }
