@@ -59,10 +59,16 @@ class ViewController: UIViewController {
             
             let type = toilette.fields.type ?? ""
             let distrinct = toilette.fields.arrondissement ?? ""
-            let acces = toilette.fields.acces_pmr ?? ""
+            let accesPMR = toilette.fields.acces_pmr ?? ""
             let horaire = toilette.fields.horaire ?? ""
             let url = toilette.fields.url ?? ""
             let relaisBB = toilette.fields.relaisBB ?? ""
+            var relais = "🚼"
+            if relaisBB == "Non" { relais = "" }
+            var acces = "♿️"
+            if accesPMR == "Non" { acces = "" }
+            
+           
             
             let toiletteItem = Toilette(fields: Fields(arrondissement: distrinct, adresse: address, geo_point_2d: geoPoint, horaire: acces, type: horaire, acces_pmr: url, url: type, relaisBB: relaisBB))
             toiletteSelected = toiletteItem
@@ -72,7 +78,7 @@ class ViewController: UIViewController {
                 print("type == \(type), adresse == \(address)")
             }
             
-            let annotation = ToilettePin(title: type, subtitle: horaire, coordinate: coordinate)
+            let annotation = ToilettePin(title: type, subtitle: horaire + " " + acces + " " + relais, coordinate: coordinate)
             
             self.mapView.addAnnotation(annotation)
         }
