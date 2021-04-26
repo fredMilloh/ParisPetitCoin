@@ -1,45 +1,28 @@
 //
-//  ToilettesTVController.swift
+//  DetailTableVC.swift
 //  ParisPetitCoin
 //
-//  Created by fred on 06/04/2021.
+//  Created by fred on 25/04/2021.
 //
 
 import UIKit
 
-class ToilettesTVController: UITableViewController {
+class DetailTableVC: UITableViewController {
     
-    @IBOutlet weak var toilettesTable: UITableView!
-    
-    var toilettes = [Toilette]()
-
+    var toiletteDetail: Toilette?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        receiveData()
-        
-        }
-        
-        func receiveData() {
-            let service = Service()
-            service.getDataSet { [weak self] (statut, toilettes) in
-                guard let self = self else { return }
-                if statut {
-                    guard let toilettes = toilettes else { return }
-                    self.toilettes = toilettes
-                    self.toilettesTable.reloadData()
-                } else {
-                    self.toilettes = []
-                }
-            }
-            
+        print("toiletteDetail == \(toiletteDetail!)")
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-// MARK: - Table view data source
+
+    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -48,27 +31,16 @@ class ToilettesTVController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return toilettes.count
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToiletteCell", for: indexPath)
-        let toilette = toilettes[indexPath.row].fields
-        cell.textLabel?.text = (toilette.adresse ?? "") + " " + (toilette.arrondissement ?? "")
-        cell.detailTextLabel?.text = toilette.type ?? ""
+     let cell = tableView.dequeueReusableCell(withIdentifier: "DetailToilette", for: indexPath)
+        cell.textLabel?.text = toiletteDetail?.fields.adresse
+     
+     return cell
         
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //cell pour afficher popup info = adresse, status
-        /*
-        let detailMovie = self.storyboard?.instantiateViewController(identifier: "ToDetail") as! DetailsController
-        let movieSelected = movies[indexPath.row]
-        detailMovie.movieSelected = movieSelected
-        self.navigationController?.pushViewController(detailMovie, animated: true)
- */
     }
     
 
@@ -116,5 +88,5 @@ class ToilettesTVController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

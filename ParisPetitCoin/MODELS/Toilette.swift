@@ -16,17 +16,17 @@ struct Toilette: Decodable {
 }
 
 struct Fields: Decodable {
-    let state: String?
     let arrondissement: String?
     let adresse: String?
     let geo_point_2d: [Double]?
-    let acces_pmr: String?
     let horaire: String?
-    let url: String?
     let type: String?
+    let acces_pmr: String?
+    let url: String?
+    let relaisBB: String?
+    
     
     enum CodingKeys: String, CodingKey {
-        case state = "statut"
         case arrondissement = "arrondissement"
         case adresse = "adresse"
         case geo_point_2d = "geo_point_2d"
@@ -34,5 +34,6 @@ struct Fields: Decodable {
         case horaire = "horaire"
         case url = "url_fiche_equipement"
         case type = "type"
+        case relaisBB = "relais_bebe"
     }
 }

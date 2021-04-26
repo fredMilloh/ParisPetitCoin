@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     let locationManager = CLLocationManager()
     var toilettes = [Toilette]()
     
+    var toiletteSelected: Toilette?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupManager()
@@ -55,37 +57,29 @@ class ViewController: UIViewController {
             
             guard let address = toilette.fields.adresse else { return }
             
-            var status: String?
             let type = toilette.fields.type ?? ""
-            let state = toilette.fields.state ?? ""
+            let distrinct = toilette.fields.arrondissement ?? ""
+            let acces = toilette.fields.acces_pmr ?? ""
+            let horaire = toilette.fields.horaire ?? ""
+            let url = toilette.fields.url ?? ""
+            let relaisBB = toilette.fields.relaisBB ?? ""
             
-            switch type {
-            case KEY_SANISETTES:
-                if state == KEY_OPEN { status = KEY_SANIOPEN } else { status = KEY_SANICLOSE }
-            case KEY_MOBURINOIR:
-                if state == KEY_OPEN { status = KEY_MOBURINOPEN } else { status = KEY_MOBURINCLOSE }
-            case KEY_URINOIR:
-                if state == KEY_OPEN { status = KEY_URINOPEN } else { status = KEY_URINCLOSE }
-            case KEY_MOBCABIN:
-                if state == KEY_OPEN { status = KEY_MOBCABINOPEN } else { status = KEY_MOBCABINCLOSE }
-            case KEY_TOILETTES:
-                status = KEY_TOILETTES
-            case KEY_LAVATORY:
-                status = "madame pipi"
-            case KEY_WCPERM:
-                status = "a definir"
-            default:
-                status = ""
+            let toiletteItem = Toilette(fields: Fields(arrondissement: distrinct, adresse: address, geo_point_2d: geoPoint, horaire: acces, type: horaire, acces_pmr: url, url: type, relaisBB: relaisBB))
+            toiletteSelected = toiletteItem
+            
+            
+            if type == "URINOIR FEMME" {
+                print("type == \(type), adresse == \(address)")
             }
             
-            if type == "URINOIR" {
-                print("type == \(type), state == \(state), adresse == \(address)")
-            }
-            
-            let annotation = ToilettePin(title: address, subtitle: status, coordinate: coordinate)
+            let annotation = ToilettePin(title: type, subtitle: horaire, coordinate: coordinate)
             
             self.mapView.addAnnotation(annotation)
         }
+    }
+    
+    func detailToilette(_ toiletteSelected: Toilette) {
+        
     }
     
     @IBAction func listButton(_ sender: UIButton) {
@@ -106,11 +100,11 @@ extension ViewController: CLLocationManagerDelegate {
         let region = MKCoordinateRegion(center: center, span: span)
         
         mapView.setRegion(region, animated: true)
-        
+
         let pin = MKPointAnnotation()
         pin.coordinate = center
-        pin.subtitle = KEY_ME
-        pin.title = "I'm Here"
+        pin.title = KEY_ME
+        pin.subtitle = "I'm Here 😉"
         mapView.addAnnotation(pin)
         
         mapView.showsCompass = true
@@ -130,44 +124,31 @@ extension ViewController: MKMapViewDelegate {
             //add button on the right annotationView
         let button = UIButton(type: .detailDisclosure)
             annotationView.rightCalloutAccessoryView = button
-            /*
+            
             //indicate number of cumulate pins
             if #available(iOS 11.0, *) {
                 annotationView.clusteringIdentifier = ""
             } else {
                 annotationView.annotation = annotation
             }
-            */
-        switch annotation.subtitle {
-        case KEY_SANIOPEN:
+            
+        switch annotation.title {
+        case KEY_SANISETTES:
             annotationView.markerTintColor = .systemGreen
             annotationView.glyphImage = sanisette
-        case KEY_SANICLOSE:
-            annotationView.markerTintColor = .systemRed
-            annotationView.glyphImage = sanisette
-        case KEY_MOBURINOPEN:
-            annotationView.markerTintColor = .systemGreen
+        case KEY_URINOIR:
+            annotationView.markerTintColor = .systemTeal
             annotationView.glyphImage = urinoir
-        case KEY_MOBURINCLOSE:
-            annotationView.markerTintColor = .systemRed
+        case KEY_URINOIRFEMME:
+            annotationView.markerTintColor = .systemOrange
             annotationView.glyphImage = urinoir
-        case KEY_URINOPEN:
-            annotationView.markerTintColor = .systemGreen
-            annotationView.glyphImage = urinoir
-        case KEY_URINCLOSE:
-            annotationView.markerTintColor = .systemRed
-            annotationView.glyphImage = urinoir
-        case KEY_MOBCABINOPEN:
-            annotationView.markerTintColor = .systemGreen
-        case KEY_MOBCABINCLOSE:
-            annotationView.markerTintColor = .systemRed
         case KEY_TOILETTES:
             annotationView.markerTintColor = .systemGray
             annotationView.glyphImage = toilet
-        case "madame pipi":
+        case KEY_LAVATORY:
             annotationView.markerTintColor = .systemYellow
-        case "a definir":
-            annotationView.markerTintColor = .systemOrange
+        case KEY_WCPERM:
+            annotationView.markerTintColor = .systemYellow
         case KEY_ME:
             annotationView.markerTintColor = .systemBlue
             annotationView.glyphText = "😀"
@@ -179,13 +160,18 @@ extension ViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        guard let toilettePin = view.annotation as? ToilettePin else { return }
         
-        //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        let detailTableView = self.storyboard?.instantiateViewController(withIdentifier: "detailToilette") as! DetailTableVC
+        self.toiletteSelected = detailTableView.toiletteDetail
+        
+        self.navigationController?.pushViewController(detailTableView, animated: true)
+        
+        /*
+        guard let toilettePin = view.annotation as? ToilettePin else { return }
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
         
         toilettePin.mapItem?.openInMaps(launchOptions: launchOptions)
-        
+        */
         
     }
 }

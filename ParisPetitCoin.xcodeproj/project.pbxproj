@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		274BC867C284F2C674E6A420 /* Pods_ParisPetitCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */; };
+		B655B1B2263571CC0032330D /* DetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655B1B0263571CC0032330D /* DetailTableVC.swift */; };
+		B655B1B3263571CC0032330D /* DetailTableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B655B1B1263571CC0032330D /* DetailTableVC.xib */; };
 		B676B7CF262C43F30001D46F /* ToilettePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676B7CE262C43F30001D46F /* ToilettePin.swift */; };
 		B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6A261C62050005CE89 /* AppDelegate.swift */; };
 		B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */; };
@@ -25,6 +27,8 @@
 		0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParisPetitCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE6A4886E6D259E47801CD4 /* Pods-ParisPetitCoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisPetitCoin.release.xcconfig"; path = "Target Support Files/Pods-ParisPetitCoin/Pods-ParisPetitCoin.release.xcconfig"; sourceTree = "<group>"; };
 		62A7CE30DE57E12585B9E13E /* Pods-ParisPetitCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisPetitCoin.debug.xcconfig"; path = "Target Support Files/Pods-ParisPetitCoin/Pods-ParisPetitCoin.debug.xcconfig"; sourceTree = "<group>"; };
+		B655B1B0263571CC0032330D /* DetailTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableVC.swift; sourceTree = "<group>"; };
+		B655B1B1263571CC0032330D /* DetailTableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableVC.xib; sourceTree = "<group>"; };
 		B676B7CE262C43F30001D46F /* ToilettePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToilettePin.swift; sourceTree = "<group>"; };
 		B6CF4E67261C62050005CE89 /* ParisPetitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParisPetitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CF4E6A261C62050005CE89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			children = (
 				B6CF4E6E261C62050005CE89 /* ViewController.swift */,
 				B6E13839261CBEFE00F5B9A7 /* ToilettesTVController.swift */,
+				B655B1B0263571CC0032330D /* DetailTableVC.swift */,
+				B655B1B1263571CC0032330D /* DetailTableVC.xib */,
 			);
 			path = CONTROLLERS;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 			files = (
 				B6CF4E77261C620B0005CE89 /* LaunchScreen.storyboard in Resources */,
 				B6CF4E74261C620B0005CE89 /* Assets.xcassets in Resources */,
+				B655B1B3263571CC0032330D /* DetailTableVC.xib in Resources */,
 				B6CF4E72261C62050005CE89 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +278,7 @@
 			files = (
 				B6CF4E6F261C62050005CE89 /* ViewController.swift in Sources */,
 				B6E13828261C9CBD00F5B9A7 /* Service.swift in Sources */,
+				B655B1B2263571CC0032330D /* DetailTableVC.swift in Sources */,
 				B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */,
 				B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */,
 				B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */,

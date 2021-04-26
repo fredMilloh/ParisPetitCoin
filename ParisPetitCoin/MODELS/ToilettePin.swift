@@ -24,9 +24,10 @@ class ToilettePin: NSObject, MKAnnotation {
     
     var mapItem: MKMapItem? {
         guard let location = title else { return nil }
-        guard let state = subtitle else { return nil }
+       // guard let location = coordinate else { return nil }
+        guard let type = subtitle else { return nil }
         
-        let addressDict = [CNPostalAddressStreetKey: location, CNPostalAddressStateKey: state]
+        let addressDict = [CNPostalAddressStreetKey: location, CNPostalAddressStateKey: type]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
         let mapItem = MKMapItem(placemark: placemark)
         return mapItem
@@ -34,20 +35,9 @@ class ToilettePin: NSObject, MKAnnotation {
 }
 //Keys
 let KEY_ME = "me"
-let KEY_OPEN = "Ouvert"
-let KEY_CLOSE = "Fermé"
-let KEY_SANISETTES = "SANISETTES"
-let KEY_SANIOPEN = "Open Sanisette"
-let KEY_SANICLOSE = "Closed Sanisette"
-let KEY_MOBURINOIR = "URINOIR MOBILE"
-let KEY_MOBURINOPEN = "Open Mobile Urinal"
-let KEY_MOBURINCLOSE = "Closed Mobile Urinal"
+let KEY_SANISETTES = "SANISETTE"
 let KEY_URINOIR = "URINOIR"
-let KEY_URINOPEN = "Open Urinal"
-let KEY_URINCLOSE = "Closed Urinal"
-let KEY_MOBCABIN = "CABINE MOBILE"
-let KEY_MOBCABINOPEN = "Open Mobile Cabin"
-let KEY_MOBCABINCLOSE = "Closed Mobile Cabin"
+let KEY_URINOIRFEMME = "URINOIR FEMME"
 let KEY_TOILETTES = "TOILETTES"
 let KEY_LAVATORY = "LAVATORY"
 let KEY_WCPERM = "WC PUBLICS PERMANENTS"
