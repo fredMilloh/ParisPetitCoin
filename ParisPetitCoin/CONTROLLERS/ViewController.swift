@@ -68,17 +68,17 @@ class ViewController: UIViewController {
             var acces = "♿️"
             if accesPMR == "Non" { acces = "" }
             
-           
-            
-            let toiletteItem = Toilette(fields: Fields(arrondissement: distrinct, adresse: address, geo_point_2d: geoPoint, horaire: acces, type: horaire, acces_pmr: url, url: type, relaisBB: relaisBB))
-            toiletteSelected = toiletteItem
-            
-            
             if type == "URINOIR FEMME" {
                 print("type == \(type), adresse == \(address)")
             }
             
             let annotation = ToilettePin(title: type, subtitle: horaire + " " + acces + " " + relais, coordinate: coordinate)
+                    
+            //let toiletteDetail = Fields(arrondissement: distrinct, adresse: address, geo_point_2d: geoPoint, horaire: horaire, type: type, acces_pmr: accesPMR, url: url, relaisBB: relaisBB)
+            
+            let toiletteD = Toilette(fields: Fields(arrondissement: distrinct, adresse: address, geo_point_2d: geoPoint, horaire: horaire, type: type, acces_pmr: accesPMR, url: url, relaisBB: relaisBB))
+            
+            toiletteSelected = toiletteD
             
             self.mapView.addAnnotation(annotation)
         }
@@ -166,12 +166,10 @@ extension ViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-        let detailTableView = self.storyboard?.instantiateViewController(withIdentifier: "detailToilette") as! DetailTableVC
-        self.toiletteSelected = detailTableView.toiletteDetail
-        
-        self.navigationController?.pushViewController(detailTableView, animated: true)
-        
+        /*
+       let detailTableVC = DetailTableVC()
+        detailTableVC.toiletteDetail = toiletteSelected
+        */
         /*
         guard let toilettePin = view.annotation as? ToilettePin else { return }
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
