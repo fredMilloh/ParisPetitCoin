@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     var webView: WKWebView!
     var progressView: UIProgressView!
     
-    var selectedToilette: String?
+    var selectedToilette: Toilette?
 
     override func loadView() {
         webView = WKWebView()
@@ -48,6 +48,16 @@ class DetailViewController: UIViewController {
         
         let keyPath = #keyPath(WKWebView.estimatedProgress)
         webView.addObserver(self, forKeyPath: keyPath, options: .new, context: nil)
+        
+        
+        //guard
+        if let item = selectedToilette {
+            title = item.fields.type
+            let url = URL(string: item.fields.url ?? "")
+            
+            webView.load(URLRequest(url: url!))
+            webView.allowsBackForwardNavigationGestures = true
+        }
     }
     
 
@@ -63,5 +73,7 @@ class DetailViewController: UIViewController {
 
 }
 extension DetailViewController: WKNavigationDelegate {
-    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        title = webView.title
+    }
 }

@@ -15,9 +15,7 @@ class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     var toilettes = [Toilette]()
-    
-    var toiletteSelected: Toilette?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setupManager()
@@ -39,7 +37,7 @@ class ViewController: UIViewController {
                 if statut {
                     guard let toilettes = toilettes else { return }
                     self.toilettes = toilettes
-                    self.createPinToilette(toilettes)
+                    self.createToiletteAnnotation(toilettes)
                     
                 } else {
                     self.toilettes = []
@@ -47,7 +45,7 @@ class ViewController: UIViewController {
             }
     }
     
-    func createPinToilette(_ toilettes: [Toilette]) {
+    func createToiletteAnnotation(_ toilettes: [Toilette]) {
         for toilette in toilettes {
             
             guard let geoPoint = toilette.fields.geo_point_2d else { return }
@@ -55,11 +53,10 @@ class ViewController: UIViewController {
                 let longitude = geoPoint[1]
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             
-            guard let address = toilette.fields.adresse else { return }
-            
+            let address = toilette.fields.adresse ?? ""
             let type = toilette.fields.type ?? ""
             let distrinct = toilette.fields.arrondissement ?? ""
-            let accesPMR = toilette.fields.acces_pmr ?? ""
+            let accesPMR = toilette.fields.accesPMR ?? ""
             let horaire = toilette.fields.horaire ?? ""
             let url = toilette.fields.url ?? ""
             let relaisBB = toilette.fields.relaisBB ?? ""
@@ -68,24 +65,10 @@ class ViewController: UIViewController {
             var acces = "♿️"
             if accesPMR == "Non" { acces = "" }
             
-            if type == "URINOIR FEMME" {
-                print("type == \(type), adresse == \(address)")
-            }
-            
-            let annotation = ToilettePin(title: type, subtitle: horaire + " " + acces + " " + relais, coordinate: coordinate)
-                    
-            //let toiletteDetail = Fields(arrondissement: distrinct, adresse: address, geo_point_2d: geoPoint, horaire: horaire, type: type, acces_pmr: accesPMR, url: url, relaisBB: relaisBB)
-            
-            let toiletteD = Toilette(fields: Fields(arrondissement: distrinct, adresse: address, geo_point_2d: geoPoint, horaire: horaire, type: type, acces_pmr: accesPMR, url: url, relaisBB: relaisBB))
-            
-            toiletteSelected = toiletteD
+            let annotation = ToiletteAnnotation(title: type, subtitle: horaire + " " + relais + " " + acces, coordinate: coordinate, url: url, arrondissement: distrinct, adresse: address, horaire: horaire, accesPMR: acces, relais_bebe: relais)
             
             self.mapView.addAnnotation(annotation)
         }
-    }
-    
-    func detailToilette(_ toiletteSelected: Toilette) {
-        
     }
     
     @IBAction func listButton(_ sender: UIButton) {
@@ -114,8 +97,6 @@ extension ViewController: CLLocationManagerDelegate {
         mapView.addAnnotation(pin)
         
         mapView.showsCompass = true
-        
-        
     }
 }
 
@@ -124,11 +105,13 @@ extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
     
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "")
-        
+        if let annotation = annotation as? ToiletteAnnotation {
+            
             //add bubble info on annotationView
             annotationView.canShowCallout = true
+            
             //add button on the right annotationView
-        let button = UIButton(type: .detailDisclosure)
+            let button = UIButton(type: .detailDisclosure)
             annotationView.rightCalloutAccessoryView = button
             
             //indicate number of cumulate pins
@@ -162,21 +145,12 @@ extension ViewController: MKMapViewDelegate {
             annotationView.markerTintColor = .systemTeal
             annotationView.glyphImage = questionMark
         }
+        }
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        /*
-       let detailTableVC = DetailTableVC()
-        detailTableVC.toiletteDetail = toiletteSelected
-        */
-        /*
-        guard let toilettePin = view.annotation as? ToilettePin else { return }
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
-        
-        toilettePin.mapItem?.openInMaps(launchOptions: launchOptions)
-        */
-        
+       
     }
 }
  

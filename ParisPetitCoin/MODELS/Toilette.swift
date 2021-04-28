@@ -21,7 +21,7 @@ struct Fields: Decodable {
     let geo_point_2d: [Double]?
     let horaire: String?
     let type: String?
-    let acces_pmr: String?
+    let accesPMR: String?
     let url: String?
     let relaisBB: String?
     
@@ -30,7 +30,7 @@ struct Fields: Decodable {
         case arrondissement = "arrondissement"
         case adresse = "adresse"
         case geo_point_2d = "geo_point_2d"
-        case acces_pmr = "acces_pmr"
+        case accesPMR = "acces_pmr"
         case horaire = "horaire"
         case url = "url_fiche_equipement"
         case type = "type"
