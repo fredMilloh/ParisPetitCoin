@@ -90,11 +90,8 @@ extension ViewController: CLLocationManagerDelegate {
         
         mapView.setRegion(region, animated: true)
 
-        let pin = MKPointAnnotation()
-        pin.coordinate = center
-        pin.title = KEY_ME
-        pin.subtitle = "I'm Here 😉"
-        mapView.addAnnotation(pin)
+        let userAnnotation = ToiletteAnnotation(title: KEY_ME, subtitle: "I'm Here 😉", coordinate: center, url: "", arrondissement: "", adresse: "", horaire: "", accesPMR: "", relais_bebe: "")
+        mapView.addAnnotation(userAnnotation)
         
         mapView.showsCompass = true
     }
@@ -150,6 +147,11 @@ extension ViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        let toilette = view.annotation as? ToiletteAnnotation
+        let infoTVC = self.storyboard?.instantiateViewController(identifier: "InfoTVC") as! InfoTVController
+        infoTVC.selectedToilette = toilette
+        self.navigationController?.pushViewController(infoTVC, animated: true)
        
     }
 }
