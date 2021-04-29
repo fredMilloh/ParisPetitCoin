@@ -65,7 +65,7 @@ class ViewController: UIViewController {
             var acces = "♿️"
             if accesPMR == "Non" { acces = "" }
             
-            let annotation = ToiletteAnnotation(title: type, subtitle: horaire + " " + relais + " " + acces, coordinate: coordinate, url: url, arrondissement: distrinct, adresse: address, horaire: horaire, accesPMR: acces, relais_bebe: relais)
+            let annotation = ToiletteAnnotation(title: type, subtitle: horaire + " " + relais + " " + acces, coordinate: coordinate, url: url, arrondissement: distrinct, adresse: address, horaire: horaire, accesPMR: accesPMR, relais_bebe: relaisBB)
             
             self.mapView.addAnnotation(annotation)
         }

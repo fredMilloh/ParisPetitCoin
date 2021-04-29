@@ -18,7 +18,6 @@ class InfoTVController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupProgressView()
         setupWebView()
     }
@@ -61,17 +60,39 @@ class InfoTVController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 6
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath)
-
-        cell.textLabel?.text = selectedToilette?.title
-        cell.detailTextLabel?.text = selectedToilette?.adresse
-
-        return cell
+        
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_HORAIRE, for: indexPath) as! LabelTVCell
+            cell.infoLabel.text = selectedToilette?.horaire
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_GO, for: indexPath) as! GoTVCell
+            
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_TYPE, for: indexPath) as! LabelTVCell
+            cell.infoLabel.text = selectedToilette?.title
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ADRESSE, for: indexPath) as! LabelTVCell
+            cell.infoLabel.text = selectedToilette?.adresse
+            return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ACCES, for: indexPath) as! LabelTVCell
+            cell.infoLabel.text = selectedToilette?.accesPMR
+            return cell
+        case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_RELAIS, for: indexPath) as! LabelTVCell
+            cell.infoLabel.text = selectedToilette?.relais_bebe
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
    
 }

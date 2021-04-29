@@ -11,6 +11,7 @@
 		B612B5B52639A164008E1F65 /* InfoTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612B5B42639A164008E1F65 /* InfoTVController.swift */; };
 		B612B5B9263B043C008E1F65 /* GoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612B5B8263B043C008E1F65 /* GoTVCell.swift */; };
 		B612B5BB263B0453008E1F65 /* LabelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612B5BA263B0453008E1F65 /* LabelTVCell.swift */; };
+		B612B5BD263B0AAB008E1F65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612B5BC263B0AAB008E1F65 /* Constants.swift */; };
 		B676B7CF262C43F30001D46F /* ToiletteAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676B7CE262C43F30001D46F /* ToiletteAnnotation.swift */; };
 		B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6A261C62050005CE89 /* AppDelegate.swift */; };
 		B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		B612B5B42639A164008E1F65 /* InfoTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTVController.swift; sourceTree = "<group>"; };
 		B612B5B8263B043C008E1F65 /* GoTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTVCell.swift; sourceTree = "<group>"; };
 		B612B5BA263B0453008E1F65 /* LabelTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTVCell.swift; sourceTree = "<group>"; };
+		B612B5BC263B0AAB008E1F65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B676B7CE262C43F30001D46F /* ToiletteAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletteAnnotation.swift; sourceTree = "<group>"; };
 		B6CF4E67261C62050005CE89 /* ParisPetitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParisPetitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CF4E6A261C62050005CE89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				B6CF4E6A261C62050005CE89 /* AppDelegate.swift */,
 				B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */,
 				B6CF4E73261C620B0005CE89 /* Assets.xcassets */,
+				B612B5BC263B0AAB008E1F65 /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6CF4E6F261C62050005CE89 /* ViewController.swift in Sources */,
+				B612B5BD263B0AAB008E1F65 /* Constants.swift in Sources */,
 				B6E13828261C9CBD00F5B9A7 /* Service.swift in Sources */,
 				B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */,
 				B612B5B52639A164008E1F65 /* InfoTVController.swift in Sources */,
