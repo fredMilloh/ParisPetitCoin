@@ -68,27 +68,41 @@ class InfoTVController: UITableViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_HORAIRE, for: indexPath) as! LabelTVCell
-            cell.infoLabel.text = selectedToilette?.horaire
+            var horaire = selectedToilette?.horaire
+            if horaire == "Voir fiche équipement" {
+                horaire = "The opening hours are indicated on the website above"
+                cell.infoLabel.text = horaire
+            } else {
+                cell.infoLabel.text = "The opening hours are  " + (horaire ?? "Indicated on the website above")
+            }
             return cell
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ADRESSE, for: indexPath) as! LabelTVCell
+            let address = selectedToilette?.adresse
+            cell.infoLabel.text = "Address : " + (address ?? "undefined")
+            return cell
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_GO, for: indexPath) as! GoTVCell
             
             return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_TYPE, for: indexPath) as! LabelTVCell
-            cell.infoLabel.text = selectedToilette?.title
-            return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ADRESSE, for: indexPath) as! LabelTVCell
-            cell.infoLabel.text = selectedToilette?.adresse
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_TYPE, for: indexPath) as! LabelTVCell
+            let type = selectedToilette?.title
+            cell.infoLabel.text = "This toilet is type : " + (type ?? "undefined")
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ACCES, for: indexPath) as! LabelTVCell
-            cell.infoLabel.text = selectedToilette?.accesPMR
+            let acces = selectedToilette?.accesPMR
+            if acces == "Oui" {
+                cell.infoLabel.text = "♿️ Accessible to people with reduced mobility"
+            }
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_RELAIS, for: indexPath) as! LabelTVCell
-            cell.infoLabel.text = selectedToilette?.relais_bebe
+            let relais = selectedToilette?.relais_bebe
+            if relais == "Oui" {
+                cell.infoLabel.text = "🚼  Relay baby"
+            }
             return cell
         default:
             return UITableViewCell()

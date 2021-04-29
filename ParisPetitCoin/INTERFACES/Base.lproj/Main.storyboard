@@ -112,7 +112,7 @@
         <scene sceneID="ahI-UL-zOA">
             <objects>
                 <tableViewController storyboardIdentifier="InfoTVC" id="TLy-1u-1V5" customClass="InfoTVController" customModule="ParisPetitCoin" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tCN-dl-VOC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tCN-dl-VOC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -127,14 +127,14 @@
                         </wkWebView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HoraireCell" id="SWR-7M-kEI" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="374.33333396911621" width="390" height="34.333332061767578"/>
+                                <rect key="frame" x="0.0" y="374.33333396911621" width="390" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SWR-7M-kEI" id="imE-zD-TTo">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="horaire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2A-Fr-kd9">
-                                            <rect key="frame" x="20" y="7.9999999999999982" width="350" height="18.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="horaire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="T2A-Fr-kd9">
+                                            <rect key="frame" x="20" y="8" width="350" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -151,15 +151,40 @@
                                     <outlet property="infoLabel" destination="T2A-Fr-kd9" id="f2Q-yl-tCI"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoCell" id="OZe-5W-1PS" customClass="GoTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="408.66666603088379" width="390" height="50.333332061767578"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdresseCell" id="OZe-5W-1PS" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="408.33333396911621" width="390" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OZe-5W-1PS" id="m46-w6-Eb2">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="50.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-QV-2Hn">
-                                            <rect key="frame" x="52" y="9.9999999999999982" width="286" height="30.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Vp-wU-Kea">
+                                            <rect key="frame" x="20" y="8" width="350" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3Vp-wU-Kea" firstAttribute="top" secondItem="m46-w6-Eb2" secondAttribute="top" constant="8" id="9mF-Le-u5b"/>
+                                        <constraint firstItem="3Vp-wU-Kea" firstAttribute="leading" secondItem="m46-w6-Eb2" secondAttribute="leading" constant="20" id="hrx-Va-KFx"/>
+                                        <constraint firstAttribute="bottom" secondItem="3Vp-wU-Kea" secondAttribute="bottom" constant="8" id="ngi-Dm-CtJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="3Vp-wU-Kea" secondAttribute="trailing" constant="20" id="zyd-Rd-J4V"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="infoLabel" destination="3Vp-wU-Kea" id="2E2-WP-pID"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoCell" rowHeight="100" id="IBw-eE-6CA" customClass="GoTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="442.33333396911621" width="390" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IBw-eE-6CA" id="Z4U-J1-779">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="me0-fN-Ud3">
+                                            <rect key="frame" x="52" y="10" width="286" height="80"/>
                                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                                             <state key="normal" title="          GO there with route guidance           ">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,54 +195,29 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="goButtonPressedWithSender:" destination="OZe-5W-1PS" eventType="touchUpInside" id="qiU-P7-JsZ"/>
+                                                <action selector="goButtonPressedWithSender:" destination="IBw-eE-6CA" eventType="touchUpInside" id="ATB-Ny-p5G"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Epg-QV-2Hn" firstAttribute="centerX" secondItem="m46-w6-Eb2" secondAttribute="centerX" id="3Ja-Y2-uI8"/>
-                                        <constraint firstAttribute="bottom" secondItem="Epg-QV-2Hn" secondAttribute="bottom" constant="10" id="8Be-p0-P1x"/>
-                                        <constraint firstItem="Epg-QV-2Hn" firstAttribute="top" secondItem="m46-w6-Eb2" secondAttribute="top" constant="10" id="Jrz-9q-POj"/>
+                                        <constraint firstItem="me0-fN-Ud3" firstAttribute="centerX" secondItem="Z4U-J1-779" secondAttribute="centerX" id="7Cp-p2-hGp"/>
+                                        <constraint firstItem="me0-fN-Ud3" firstAttribute="top" secondItem="Z4U-J1-779" secondAttribute="top" constant="10" id="OUL-9X-ErK"/>
+                                        <constraint firstAttribute="bottom" secondItem="me0-fN-Ud3" secondAttribute="bottom" constant="10" id="iJT-Iz-TvP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="goButton" destination="Epg-QV-2Hn" id="ILJ-Oo-bvr"/>
+                                    <outlet property="goButton" destination="me0-fN-Ud3" id="dwB-kQ-z2z"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TypeCell" id="IBw-eE-6CA" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="458.99999809265137" width="390" height="34.333332061767578"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IBw-eE-6CA" id="Z4U-J1-779">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34.333332061767578"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z80-4H-FCd">
-                                            <rect key="frame" x="20" y="7.9999999999999982" width="350" height="18.333333333333329"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="z80-4H-FCd" secondAttribute="trailing" constant="20" id="4ac-us-WrY"/>
-                                        <constraint firstItem="z80-4H-FCd" firstAttribute="top" secondItem="Z4U-J1-779" secondAttribute="top" constant="8" id="a7z-KS-7wz"/>
-                                        <constraint firstItem="z80-4H-FCd" firstAttribute="leading" secondItem="Z4U-J1-779" secondAttribute="leading" constant="20" id="d3v-mv-xJG"/>
-                                        <constraint firstAttribute="bottom" secondItem="z80-4H-FCd" secondAttribute="bottom" constant="8" id="xGl-Zg-QgF"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="infoLabel" destination="z80-4H-FCd" id="xZE-Ip-0nR"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressCell" id="60N-Er-FpN" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="493.33333015441895" width="390" height="34.333332061767578"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TypeCell" id="60N-Er-FpN" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="542.33333396911621" width="390" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="60N-Er-FpN" id="eUS-J8-e2o">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2i-8W-XGl">
-                                            <rect key="frame" x="20" y="7.9999999999999982" width="350" height="18.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Y2i-8W-XGl">
+                                            <rect key="frame" x="20" y="8" width="350" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -231,18 +231,18 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="infoLabel" destination="Y2i-8W-XGl" id="Vrl-y1-pIg"/>
+                                    <outlet property="infoLabel" destination="Y2i-8W-XGl" id="aAo-Mx-Q60"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccesCell" id="Mul-rd-vgC" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="527.66666221618652" width="390" height="34.333332061767578"/>
+                                <rect key="frame" x="0.0" y="576.33333396911621" width="390" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mul-rd-vgC" id="nmT-sc-pwd">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="acces" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZI-ne-xg9">
-                                            <rect key="frame" x="20" y="7.9999999999999982" width="350" height="18.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="QZI-ne-xg9">
+                                            <rect key="frame" x="20" y="8" width="350" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -260,14 +260,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RelaisCell" id="YDq-YA-5hH" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="561.9999942779541" width="390" height="34.333332061767578"/>
+                                <rect key="frame" x="0.0" y="592.33333396911621" width="390" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YDq-YA-5hH" id="mHP-DQ-375">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="34.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="relais" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7b-1e-z6U">
-                                            <rect key="frame" x="20" y="7.9999999999999982" width="350" height="18.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="i7b-1e-z6U">
+                                            <rect key="frame" x="20" y="8" width="350" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

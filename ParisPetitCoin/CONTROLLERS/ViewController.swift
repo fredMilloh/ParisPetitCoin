@@ -58,14 +58,18 @@ class ViewController: UIViewController {
             let distrinct = toilette.fields.arrondissement ?? ""
             let accesPMR = toilette.fields.accesPMR ?? ""
             let horaire = toilette.fields.horaire ?? ""
+            var horairs = horaire
+            if horaire == "Voir fiche équipement" {
+                horairs = "Hours indicated on the website"
+            }
             let url = toilette.fields.url ?? ""
             let relaisBB = toilette.fields.relaisBB ?? ""
-            var relais = "🚼"
-            if relaisBB == "Non" { relais = "" }
+            var relais = ""
+            if relaisBB == "Oui" { relais = "🚼" }
             var acces = "♿️"
             if accesPMR == "Non" { acces = "" }
             
-            let annotation = ToiletteAnnotation(title: type, subtitle: horaire + " " + relais + " " + acces, coordinate: coordinate, url: url, arrondissement: distrinct, adresse: address, horaire: horaire, accesPMR: accesPMR, relais_bebe: relaisBB)
+            let annotation = ToiletteAnnotation(title: type, subtitle: horairs + " " + relais + " " + acces, coordinate: coordinate, url: url, arrondissement: distrinct, adresse: address, horaire: horaire, accesPMR: accesPMR, relais_bebe: relaisBB)
             
             self.mapView.addAnnotation(annotation)
         }
