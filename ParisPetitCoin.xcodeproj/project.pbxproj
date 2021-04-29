@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		274BC867C284F2C674E6A420 /* Pods_ParisPetitCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */; };
 		B612B5B52639A164008E1F65 /* InfoTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612B5B42639A164008E1F65 /* InfoTVController.swift */; };
+		B612B5B9263B043C008E1F65 /* GoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612B5B8263B043C008E1F65 /* GoTVCell.swift */; };
+		B612B5BB263B0453008E1F65 /* LabelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612B5BA263B0453008E1F65 /* LabelTVCell.swift */; };
 		B676B7CF262C43F30001D46F /* ToiletteAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676B7CE262C43F30001D46F /* ToiletteAnnotation.swift */; };
 		B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6A261C62050005CE89 /* AppDelegate.swift */; };
 		B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */; };
@@ -27,6 +29,8 @@
 		3AE6A4886E6D259E47801CD4 /* Pods-ParisPetitCoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisPetitCoin.release.xcconfig"; path = "Target Support Files/Pods-ParisPetitCoin/Pods-ParisPetitCoin.release.xcconfig"; sourceTree = "<group>"; };
 		62A7CE30DE57E12585B9E13E /* Pods-ParisPetitCoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisPetitCoin.debug.xcconfig"; path = "Target Support Files/Pods-ParisPetitCoin/Pods-ParisPetitCoin.debug.xcconfig"; sourceTree = "<group>"; };
 		B612B5B42639A164008E1F65 /* InfoTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTVController.swift; sourceTree = "<group>"; };
+		B612B5B8263B043C008E1F65 /* GoTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTVCell.swift; sourceTree = "<group>"; };
+		B612B5BA263B0453008E1F65 /* LabelTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTVCell.swift; sourceTree = "<group>"; };
 		B676B7CE262C43F30001D46F /* ToiletteAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletteAnnotation.swift; sourceTree = "<group>"; };
 		B6CF4E67261C62050005CE89 /* ParisPetitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParisPetitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CF4E6A261C62050005CE89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 		B6E1381F261C9BA500F5B9A7 /* VIEWS */ = {
 			isa = PBXGroup;
 			children = (
+				B612B5B8263B043C008E1F65 /* GoTVCell.swift */,
+				B612B5BA263B0453008E1F65 /* LabelTVCell.swift */,
 			);
 			path = VIEWS;
 			sourceTree = "<group>";
@@ -278,8 +284,10 @@
 				B612B5B52639A164008E1F65 /* InfoTVController.swift in Sources */,
 				B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */,
 				B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */,
+				B612B5BB263B0453008E1F65 /* LabelTVCell.swift in Sources */,
 				B6E1383A261CBEFE00F5B9A7 /* ToilettesTVController.swift in Sources */,
 				B676B7CF262C43F30001D46F /* ToiletteAnnotation.swift in Sources */,
+				B612B5B9263B043C008E1F65 /* GoTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
