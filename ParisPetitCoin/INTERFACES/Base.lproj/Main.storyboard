@@ -19,37 +19,14 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sVo-J3-yum">
                                 <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZK-80-IPl">
-                                <rect key="frame" x="300" y="108" width="70" height="40"/>
-                                <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6vc-QH-jw0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="  Liste  ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="listButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2PI-Zc-HzS"/>
-                                    <segue destination="LxF-Yh-xXC" kind="showDetail" id="srw-SQ-0jG"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sVo-J3-yum" secondAttribute="bottom" id="46y-aZ-cUI"/>
                             <constraint firstItem="sVo-J3-yum" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H5V-4p-K3T"/>
-                            <constraint firstItem="JZK-80-IPl" firstAttribute="top" secondItem="sVo-J3-yum" secondAttribute="top" constant="20" id="LVh-ag-kp7"/>
-                            <constraint firstItem="JZK-80-IPl" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="300" id="QMk-A0-zdB"/>
                             <constraint firstItem="sVo-J3-yum" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m3z-yQ-PeJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sVo-J3-yum" secondAttribute="trailing" id="mOq-b0-QRJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JZK-80-IPl" secondAttribute="trailing" constant="20" id="sMr-xp-S3b"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l0z-7a-kOB"/>
@@ -60,53 +37,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="803.07692307692309" y="41.943127962085306"/>
-        </scene>
-        <!--ToilettesTV Controller-->
-        <scene sceneID="OLt-8y-ABA">
-            <objects>
-                <tableViewController id="LxF-Yh-xXC" customClass="ToilettesTVController" customModule="ParisPetitCoin" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="m0p-f8-x35">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToiletteCell" textLabel="HCc-6y-NRN" detailTextLabel="5zE-dP-Bhc" style="IBUITableViewCellStyleSubtitle" id="Ccm-3I-tYI">
-                                <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="55.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ccm-3I-tYI" id="eGF-d3-GG8">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="55.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HCc-6y-NRN">
-                                            <rect key="frame" x="20" y="8.9999999999999982" width="33" height="20.333333333333332"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5zE-dP-Bhc">
-                                            <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="LxF-Yh-xXC" id="y6e-CE-6KE"/>
-                            <outlet property="delegate" destination="LxF-Yh-xXC" id="Ed0-Qq-9YV"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <outlet property="toilettesTable" destination="m0p-f8-x35" id="PTE-it-dQX"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aGU-1o-6P4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1506.1538461538462" y="41.943127962085306"/>
         </scene>
         <!--InfoTV Controller-->
         <scene sceneID="ahI-UL-zOA">
@@ -296,7 +226,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pW2-sq-OlK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="755"/>
+            <point key="canvasLocation" x="1500" y="42"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PRS-X2-zxh">

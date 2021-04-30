@@ -21,7 +21,6 @@
 		B6CF4E77261C620B0005CE89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6CF4E75261C620B0005CE89 /* LaunchScreen.storyboard */; };
 		B6E13828261C9CBD00F5B9A7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E13827261C9CBD00F5B9A7 /* Service.swift */; };
 		B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1382A261CA4D100F5B9A7 /* Toilette.swift */; };
-		B6E1383A261CBEFE00F5B9A7 /* ToilettesTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E13839261CBEFE00F5B9A7 /* ToilettesTVController.swift */; };
 		B6FE4DA8262CAD2600E39864 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FE4DA7262CAD2600E39864 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		B6CF4E78261C620B0005CE89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6E13827261C9CBD00F5B9A7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B6E1382A261CA4D100F5B9A7 /* Toilette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toilette.swift; sourceTree = "<group>"; };
-		B6E13839261CBEFE00F5B9A7 /* ToilettesTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToilettesTVController.swift; sourceTree = "<group>"; };
 		B6FE4DA7262CAD2600E39864 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -115,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				B6CF4E6E261C62050005CE89 /* ViewController.swift */,
-				B6E13839261CBEFE00F5B9A7 /* ToilettesTVController.swift */,
 				B612B5B42639A164008E1F65 /* InfoTVController.swift */,
 			);
 			path = CONTROLLERS;
@@ -289,7 +286,6 @@
 				B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */,
 				B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */,
 				B612B5BB263B0453008E1F65 /* LabelTVCell.swift in Sources */,
-				B6E1383A261CBEFE00F5B9A7 /* ToilettesTVController.swift in Sources */,
 				B676B7CF262C43F30001D46F /* ToiletteAnnotation.swift in Sources */,
 				B612B5B9263B043C008E1F65 /* GoTVCell.swift in Sources */,
 			);

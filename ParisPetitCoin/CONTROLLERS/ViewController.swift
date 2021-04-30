@@ -75,9 +75,6 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func listButton(_ sender: UIButton) {
-    }
-    
 }
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -98,6 +95,7 @@ extension ViewController: CLLocationManagerDelegate {
         mapView.addAnnotation(userAnnotation)
         
         mapView.showsCompass = true
+        mapView.showsUserLocation = true
     }
 }
 

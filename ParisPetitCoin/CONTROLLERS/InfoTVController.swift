@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import MapKit
 
 class InfoTVController: UITableViewController {
     
@@ -83,7 +84,11 @@ class InfoTVController: UITableViewController {
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_GO, for: indexPath) as! GoTVCell
-            
+            cell.button = {
+                guard let toiletteDestination = self.selectedToilette else { return }
+                let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+                toiletteDestination.mapItem?.openInMaps(launchOptions: launchOptions)
+            }
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_TYPE, for: indexPath) as! LabelTVCell
