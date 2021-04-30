@@ -61,7 +61,7 @@ class InfoTVController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 8
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,6 +107,28 @@ class InfoTVController: UITableViewController {
             let relais = selectedToilette?.relais_bebe
             if relais == "Oui" {
                 cell.infoLabel.text = "🚼  Relay baby"
+            }
+            return cell
+        case 6:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_IMAGE1, for: indexPath) as! ImageTVCell
+            switch selectedToilette?.title {
+            case KEY_SANISETTES:
+                cell.imageToilette.image = UIImage(named: "sanisetteExt")
+            case KEY_TOILETTES:
+                cell.imageToilette.image = UIImage(named: "ToiletteExt")
+            default:
+                cell.imageToilette.image = UIImage(named: "WelcomParis")
+            }
+            return cell
+        case 7:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_IMAGE2, for: indexPath) as! ImageTVCell
+            switch selectedToilette?.title {
+            case KEY_SANISETTES:
+                cell.imageToilette.image = UIImage(named: "sanisetteInt")
+            case KEY_TOILETTES:
+                cell.imageToilette.image = UIImage(named: "Toilette2Int")
+            default:
+                cell.imageToilette.image = UIImage(named: "WelcomParis")
             }
             return cell
         default:
