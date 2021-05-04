@@ -133,8 +133,6 @@ extension ViewController: MKMapViewDelegate {
         case KEY_TOILETTES:
             annotationView.markerTintColor = .systemGray
             annotationView.glyphImage = toilet
-        case KEY_LAVATORY:
-            annotationView.markerTintColor = .systemYellow
         case KEY_WCPERM:
             annotationView.markerTintColor = .systemYellow
         case KEY_ME:

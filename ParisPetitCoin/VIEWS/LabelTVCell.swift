@@ -10,6 +10,7 @@ import UIKit
 class LabelTVCell: UITableViewCell {
     
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var iconImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

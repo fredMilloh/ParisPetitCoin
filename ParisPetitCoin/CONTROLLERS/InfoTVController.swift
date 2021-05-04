@@ -38,7 +38,7 @@ class InfoTVController: UITableViewController {
         
         progressView.leadingAnchor.constraint(equalTo: webView.leadingAnchor).isActive = true
         progressView.trailingAnchor.constraint(equalTo: webView.trailingAnchor).isActive = true
-        progressView.topAnchor.constraint(equalTo: webView.safeAreaLayoutGuide.topAnchor).isActive = true
+        progressView.bottomAnchor.constraint(equalTo: webView.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         let keyPath = #keyPath(WKWebView.estimatedProgress)
         webView.addObserver(self, forKeyPath: keyPath, options: .new, context: nil)
@@ -69,49 +69,48 @@ class InfoTVController: UITableViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_HORAIRE, for: indexPath) as! LabelTVCell
+            cell.iconImage.image = UIImage(named: "Horloge")
             var horaire = selectedToilette?.horaire
             if horaire == "Voir fiche équipement" {
                 horaire = "The opening hours are indicated on the website above"
                 cell.infoLabel.text = horaire
             } else {
-                cell.infoLabel.text = "The opening hours are  " + (horaire ?? "Indicated on the website above")
+                cell.infoLabel.text = "The opening hours are  " + (horaire ?? "Unknowned")
             }
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ADRESSE, for: indexPath) as! LabelTVCell
-            let address = selectedToilette?.adresse
-            cell.infoLabel.text = "Address : " + (address ?? "undefined")
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_TYPE, for: indexPath) as! LabelTVCell
+            let type = selectedToilette?.title
+                cell.infoLabel.text = "This free-toilet is type : " + (type ?? "undefined")
+            cell.iconImage.image = UIImage(named: "Type")
             return cell
         case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ACCES, for: indexPath) as! LabelTVCell
+            let acces = selectedToilette?.accesPMR
+            if acces == "Oui" {
+                cell.iconImage.image = UIImage(named: "Handi")
+                cell.infoLabel.text = "Accessible to people with reduced mobility"
+            }
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_RELAIS, for: indexPath) as! LabelTVCell
+            let relais = selectedToilette?.relais_bebe
+            if relais == "Oui" {
+                cell.infoLabel.text = "🚼  Relay baby"
+            }
+            return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ADRESSE, for: indexPath) as! LabelTVCell
+            let address = selectedToilette?.adresse
+            cell.iconImage.image = UIImage(named: "Adresse")
+            cell.infoLabel.text = address ?? "undefined"
+            return cell
+        case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_GO, for: indexPath) as! GoTVCell
             cell.button = {
                 guard let toiletteDestination = self.selectedToilette else { return }
                 let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
                 toiletteDestination.mapItem?.openInMaps(launchOptions: launchOptions)
-            }
-            return cell
-        case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_TYPE, for: indexPath) as! LabelTVCell
-            let type = selectedToilette?.title
-            if type == KEY_LAVATORY {
-                cell.infoLabel.text = "This pay-toilet is type : " + (type ?? "undefined")
-            } else {
-                cell.infoLabel.text = "This free-toilet is type : " + (type ?? "undefined")
-            }
-            
-            return cell
-        case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ACCES, for: indexPath) as! LabelTVCell
-            let acces = selectedToilette?.accesPMR
-            if acces == "Oui" {
-                cell.infoLabel.text = "♿️ Accessible to people with reduced mobility"
-            }
-            return cell
-        case 5:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_RELAIS, for: indexPath) as! LabelTVCell
-            let relais = selectedToilette?.relais_bebe
-            if relais == "Oui" {
-                cell.infoLabel.text = "🚼  Relay baby"
             }
             return cell
         case 6:
@@ -121,8 +120,6 @@ class InfoTVController: UITableViewController {
                 cell.imageToilette.image = UIImage(named: "sanisetteExt")
             case KEY_TOILETTES:
                 cell.imageToilette.image = UIImage(named: "toiletteExt")
-            case KEY_LAVATORY:
-                cell.imageToilette.image = UIImage(named: "payToilet")
             default:
                 cell.imageToilette.image = UIImage(named: "WelcomParis")
             }
