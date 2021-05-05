@@ -10,7 +10,7 @@ import Alamofire
 
 class Service {
     
-    fileprivate var baseUrl = "https://www.data.gouv.fr/fr/datasets/r/9cf8fab8-997c-4814-9600-8c17bc3de7e0"
+    fileprivate var baseUrl = KEY_Url
     
     typealias toilettesCallBack = (_ statut: Bool, _ toilettes: [Toilette]?) -> Void
     

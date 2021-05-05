@@ -298,7 +298,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="50L-rc-dPW">
-                                            <rect key="frame" x="40" y="21" width="310" height="228"/>
+                                            <rect key="frame" x="20" y="10" width="350" height="250"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="275" id="FQf-jv-Bxf"/>
                                                 <constraint firstAttribute="width" secondItem="50L-rc-dPW" secondAttribute="height" multiplier="1:1" id="wzB-P1-Fhv"/>
@@ -311,10 +311,10 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="50L-rc-dPW" secondAttribute="bottom" constant="10" id="48o-lA-OOv"/>
-                                        <constraint firstItem="50L-rc-dPW" firstAttribute="top" secondItem="3Mk-fu-cka" secondAttribute="topMargin" constant="10" id="lY2-Rc-qCH"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="50L-rc-dPW" secondAttribute="trailing" constant="20" id="tRS-EJ-5Du"/>
-                                        <constraint firstItem="50L-rc-dPW" firstAttribute="leading" secondItem="3Mk-fu-cka" secondAttribute="leadingMargin" constant="20" id="y3M-Ru-M9u"/>
+                                        <constraint firstAttribute="bottom" secondItem="50L-rc-dPW" secondAttribute="bottom" constant="10" id="Nbg-SB-5QU"/>
+                                        <constraint firstItem="50L-rc-dPW" firstAttribute="leading" secondItem="3Mk-fu-cka" secondAttribute="leading" constant="20" id="NuT-jJ-Rwz"/>
+                                        <constraint firstAttribute="trailing" secondItem="50L-rc-dPW" secondAttribute="trailing" constant="20" id="dSs-IK-EpY"/>
+                                        <constraint firstItem="50L-rc-dPW" firstAttribute="top" secondItem="3Mk-fu-cka" secondAttribute="top" constant="10" id="zm9-kr-rcX"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -330,7 +330,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2To-So-lqU">
-                                            <rect key="frame" x="40" y="21" width="310" height="228"/>
+                                            <rect key="frame" x="20" y="10" width="350" height="250"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="275" id="P8U-YB-xQL"/>
                                                 <constraint firstAttribute="width" secondItem="2To-So-lqU" secondAttribute="height" multiplier="1:1" id="VX4-aJ-Ymn"/>
@@ -343,10 +343,10 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="2To-So-lqU" firstAttribute="leading" secondItem="YZi-0c-fbp" secondAttribute="leadingMargin" constant="20" id="56t-n5-bCx"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="2To-So-lqU" secondAttribute="bottom" constant="10" id="Jz0-wy-5vo"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2To-So-lqU" secondAttribute="trailing" constant="20" id="Rzf-iU-f4d"/>
-                                        <constraint firstItem="2To-So-lqU" firstAttribute="top" secondItem="YZi-0c-fbp" secondAttribute="topMargin" constant="10" id="UTV-5r-bLx"/>
+                                        <constraint firstItem="2To-So-lqU" firstAttribute="top" secondItem="YZi-0c-fbp" secondAttribute="top" constant="10" id="BuJ-nO-6m3"/>
+                                        <constraint firstAttribute="trailing" secondItem="2To-So-lqU" secondAttribute="trailing" constant="20" id="O8C-Ux-gkU"/>
+                                        <constraint firstItem="2To-So-lqU" firstAttribute="leading" secondItem="YZi-0c-fbp" secondAttribute="leading" constant="20" id="puY-lr-3Ou"/>
+                                        <constraint firstAttribute="bottom" secondItem="2To-So-lqU" secondAttribute="bottom" constant="10" id="vDj-CM-C6E"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -362,7 +362,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cMd-qX-buc">
-                                            <rect key="frame" x="40" y="21" width="310" height="228"/>
+                                            <rect key="frame" x="20" y="10" width="350" height="250"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="275" id="QX3-zM-Dm7"/>
                                                 <constraint firstAttribute="width" secondItem="cMd-qX-buc" secondAttribute="height" multiplier="1:1" id="Qkd-Uh-gvh"/>
@@ -375,10 +375,10 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="cMd-qX-buc" firstAttribute="top" secondItem="CO2-ne-wDX" secondAttribute="topMargin" constant="10" id="Qay-rC-Cv8"/>
-                                        <constraint firstItem="cMd-qX-buc" firstAttribute="leading" secondItem="CO2-ne-wDX" secondAttribute="leadingMargin" constant="20" id="RqM-El-edO"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="cMd-qX-buc" secondAttribute="bottom" constant="10" id="teN-hK-poD"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="cMd-qX-buc" secondAttribute="trailing" constant="20" id="zK3-DE-agx"/>
+                                        <constraint firstItem="cMd-qX-buc" firstAttribute="leading" secondItem="CO2-ne-wDX" secondAttribute="leading" constant="20" id="HhS-nd-upz"/>
+                                        <constraint firstAttribute="trailing" secondItem="cMd-qX-buc" secondAttribute="trailing" constant="20" id="ile-cE-CBs"/>
+                                        <constraint firstItem="cMd-qX-buc" firstAttribute="top" secondItem="CO2-ne-wDX" secondAttribute="top" constant="10" id="pB8-my-OjV"/>
+                                        <constraint firstAttribute="bottom" secondItem="cMd-qX-buc" secondAttribute="bottom" constant="10" id="rC1-bl-bKb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

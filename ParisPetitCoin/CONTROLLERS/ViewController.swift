@@ -59,13 +59,13 @@ class ViewController: UIViewController {
             let accesPMR = toilette.fields.accesPMR ?? ""
             let horaire = toilette.fields.horaire ?? ""
             var horairs = horaire
-            if horaire == "Voir fiche équipement" {
+            if horaire == KEY_FICHE {
                 horairs = "Hours indicated on the website"
             }
             let url = toilette.fields.url ?? ""
             let relaisBB = toilette.fields.relaisBB ?? ""
             var relais = ""
-            if relaisBB == "Oui" { relais = "🚼" }
+            if relaisBB == KEY_OUI { relais = "🚼" }
             var acces = "♿️"
             if accesPMR == "Non" { acces = "" }
             
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            locationManager.stopUpdatingLocation()
+//locationManager.stopUpdatingLocation()
             configureRegion(location)
         }
     }
@@ -152,7 +152,7 @@ extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         let toilette = view.annotation as? ToiletteAnnotation
-        let infoTVC = self.storyboard?.instantiateViewController(identifier: "InfoTVC") as! InfoTVController
+        let infoTVC = self.storyboard?.instantiateViewController(identifier: INFOTVC) as! InfoTVController
         infoTVC.selectedToilette = toilette
         self.navigationController?.pushViewController(infoTVC, animated: true)
        

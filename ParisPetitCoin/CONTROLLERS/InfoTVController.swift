@@ -72,7 +72,7 @@ class InfoTVController: UITableViewController {
             cell.iconImage.image = horlogeIcon
             var horaire = selectedToilette?.horaire
             let type = selectedToilette?.title
-            if horaire == "Voir fiche équipement" {
+            if horaire == KEY_FICHE {
                 horaire = "opening hours are indicated on the website above"
                 cell.infoLabel.text = horaire
             } else if horaire == "" {
@@ -89,20 +89,28 @@ class InfoTVController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_TYPE, for: indexPath) as! LabelTVCell
             let type = selectedToilette?.title
             cell.iconImage.image = typeIcon
-            if type == KEY_LAVATORY {
-                cell.infoLabel.text = "these toilets are chargeable"
-            } else if type == KEY_WCPERM {
-                cell.infoLabel.text = "these toilets are free. A person is present for all information."
-            } else {
-                cell.infoLabel.text = "these toilets are free"
-                
+            switch type {
+            case KEY_LAVATORY:
+                cell.infoLabel.text = "paid toilets"
+            case KEY_WCPERM:
+                cell.infoLabel.text = "free mixed toilet. A person is present for all information."
+            case KEY_URINOIRFEMME:
+                cell.infoLabel.text = "free women's toilet"
+            case KEY_URINOIR:
+                cell.infoLabel.text = "free men's toilet"
+            case KEY_TOILETTES:
+                cell.infoLabel.text = "free mixed toilet"
+            case KEY_SANISETTES:
+                cell.infoLabel.text = "free mixed toilet"
+            default:
+                cell.infoLabel.text = "Undefined"
             }
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ACCES, for: indexPath) as! LabelTVCell
             cell.iconImage.image = disabledIcon
             let acces = selectedToilette?.accesPMR
-            if acces == "Oui" {
+            if acces == KEY_OUI {
                 cell.infoLabel.text = "equipped for people with reduced mobility."
             } else {
                 cell.infoLabel.text = "Classic toilets. No specific equipment"
@@ -126,7 +134,7 @@ class InfoTVController: UITableViewController {
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_RELAIS, for: indexPath) as! LabelTVCell
             let relais = selectedToilette?.relais_bebe
-            if relais == "Oui" {
+            if relais == KEY_OUI {
                 cell.infoLabel.text = "🚼  Relay baby"
             }
             return cell

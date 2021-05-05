@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+let KEY_Url = "https://www.data.gouv.fr/fr/datasets/r/9cf8fab8-997c-4814-9600-8c17bc3de7e0"
+
 //Keys
 let KEY_ME = "me"
 let KEY_SANISETTES = "SANISETTE"
@@ -50,3 +52,10 @@ let IDENTIFIER_IMAGE1 = "Image1Cell"
 let IDENTIFIER_IMAGE2 = "Image2Cell"
 let IDENTIFIER_IMAGE3 = "Image3Cell"
 let IDENTIFIER_IMAGE4 = "Image4Cell"
+
+//Storyboard Identifier
+let INFOTVC = "InfoTVC"
+
+//Strings
+let KEY_FICHE = "Voir fiche équipement"
+let KEY_OUI = "Oui"
