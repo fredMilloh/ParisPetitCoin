@@ -123,24 +123,27 @@ extension ViewController: MKMapViewDelegate {
         switch annotation.title {
         case KEY_SANISETTES:
             annotationView.markerTintColor = .systemGreen
-            annotationView.glyphImage = sanisette
+            annotationView.glyphImage = sanisettePin
         case KEY_URINOIR:
             annotationView.markerTintColor = .systemTeal
-            annotationView.glyphImage = urinoir
+            annotationView.glyphImage = urinoirPin
         case KEY_URINOIRFEMME:
             annotationView.markerTintColor = .systemOrange
-            annotationView.glyphImage = urinoir
+            annotationView.glyphImage = urinoirPin
         case KEY_TOILETTES:
-            annotationView.markerTintColor = .systemGray
-            annotationView.glyphImage = toilet
-        case KEY_WCPERM:
             annotationView.markerTintColor = .systemYellow
+            annotationView.glyphImage = toiletPin
+        case KEY_WCPERM:
+            annotationView.markerTintColor = .systemIndigo
+            annotationView.glyphImage = toiletPin
+        case KEY_LAVATORY:
+            annotationView.markerTintColor = .systemGray
         case KEY_ME:
             annotationView.markerTintColor = .systemBlue
             annotationView.glyphText = "😀"
         default:
             annotationView.markerTintColor = .systemTeal
-            annotationView.glyphImage = questionMark
+            annotationView.glyphImage = questionMarkPin
         }
         }
         return annotationView

@@ -15,13 +15,29 @@ let KEY_URINOIR = "URINOIR"
 let KEY_URINOIRFEMME = "URINOIR FEMME"
 let KEY_TOILETTES = "TOILETTES"
 let KEY_WCPERM = "WC PUBLICS PERMANENTS"
-
+let KEY_LAVATORY = "LAVATORY"
 
 //Images
-let sanisette = UIImage(named: "sanisette")
-let urinoir = UIImage(named: "man50")
-let toilet = UIImage(named: "toilet50")
-let questionMark = UIImage(named: "questionMark30")
+let sanisettePin = UIImage(named: "Sanisette")
+let urinoirPin = UIImage(named: "Man50")
+let toiletPin = UIImage(named: "Toilet50")
+let questionMarkPin = UIImage(named: "QuestionMark30")
+let sanisetteExt = UIImage(named: "SanisetteExt")
+let sanisetteInt = UIImage(named: "SanisetteInt")
+let sanisetteButton = UIImage(named: "SanisetteBouton")
+let urinoirMan1 = UIImage(named: "Urinoir1")
+let urinoirMan2 = UIImage(named: "Urinoir2")
+let urinoirWoman = UIImage(named: "UrinoirFemme")
+let toiletExt = UIImage(named: "ToiletteExt")
+let toiletInt = UIImage(named: "ToiletteInt")
+let WcPublic1 = UIImage(named: "WcPublic1")
+let WcPublic2 = UIImage(named: "WcPublic2")
+let welcomParis = UIImage(named: "WelcomParis")
+let thatAll = UIImage(named: "ThatAll")
+let addressIcon = UIImage(named: "Adresse")
+let disabledIcon = UIImage(named: "Disabled")
+let horlogeIcon = UIImage(named: "Horloge")
+let typeIcon = UIImage(named: "Type")
 
 //Cell Identifier
 let IDENTIFIER_GO = "GoCell"

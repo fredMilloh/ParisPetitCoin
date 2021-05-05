@@ -61,7 +61,7 @@ class InfoTVController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 9
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,43 +69,53 @@ class InfoTVController: UITableViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_HORAIRE, for: indexPath) as! LabelTVCell
-            cell.iconImage.image = UIImage(named: "Horloge")
+            cell.iconImage.image = horlogeIcon
             var horaire = selectedToilette?.horaire
+            let type = selectedToilette?.title
             if horaire == "Voir fiche équipement" {
-                horaire = "The opening hours are indicated on the website above"
+                horaire = "opening hours are indicated on the website above"
                 cell.infoLabel.text = horaire
+            } else if horaire == "" {
+                if type == KEY_LAVATORY {
+                    cell.infoLabel.text = "opening hours are unknown"
+                } else if type == KEY_WCPERM {
+                    cell.infoLabel.text = "opening hours are variable. About 9h00 am - 10h00 pm"
+                }
             } else {
-                cell.infoLabel.text = "The opening hours are  " + (horaire ?? "Unknowned")
+                cell.infoLabel.text = "opening hours are" + " " + (horaire ?? "unknow")
             }
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_TYPE, for: indexPath) as! LabelTVCell
             let type = selectedToilette?.title
-                cell.infoLabel.text = "This free-toilet is type : " + (type ?? "undefined")
-            cell.iconImage.image = UIImage(named: "Type")
+            cell.iconImage.image = typeIcon
+            if type == KEY_LAVATORY {
+                cell.infoLabel.text = "these toilets are chargeable"
+            } else if type == KEY_WCPERM {
+                cell.infoLabel.text = "these toilets are free. A person is present for all information."
+            } else {
+                cell.infoLabel.text = "these toilets are free"
+                
+            }
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ACCES, for: indexPath) as! LabelTVCell
+            cell.iconImage.image = disabledIcon
             let acces = selectedToilette?.accesPMR
             if acces == "Oui" {
-                cell.iconImage.image = UIImage(named: "Handi")
-                cell.infoLabel.text = "Accessible to people with reduced mobility"
+                cell.infoLabel.text = "equipped for people with reduced mobility."
+            } else {
+                cell.infoLabel.text = "Classic toilets. No specific equipment"
             }
             return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_RELAIS, for: indexPath) as! LabelTVCell
-            let relais = selectedToilette?.relais_bebe
-            if relais == "Oui" {
-                cell.infoLabel.text = "🚼  Relay baby"
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ADRESSE, for: indexPath) as! LabelTVCell
+            let address = selectedToilette?.adresse?.lowercased()
+            let district = selectedToilette?.arrondissement
+            cell.iconImage.image = addressIcon
+            cell.infoLabel.text = (address ?? "undefined") + "  " + (district ?? "")
             return cell
         case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_ADRESSE, for: indexPath) as! LabelTVCell
-            let address = selectedToilette?.adresse
-            cell.iconImage.image = UIImage(named: "Adresse")
-            cell.infoLabel.text = address ?? "undefined"
-            return cell
-        case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_GO, for: indexPath) as! GoTVCell
             cell.button = {
                 guard let toiletteDestination = self.selectedToilette else { return }
@@ -113,44 +123,50 @@ class InfoTVController: UITableViewController {
                 toiletteDestination.mapItem?.openInMaps(launchOptions: launchOptions)
             }
             return cell
+        case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_RELAIS, for: indexPath) as! LabelTVCell
+            let relais = selectedToilette?.relais_bebe
+            if relais == "Oui" {
+                cell.infoLabel.text = "🚼  Relay baby"
+            }
+            return cell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_IMAGE1, for: indexPath) as! ImageTVCell
             switch selectedToilette?.title {
             case KEY_SANISETTES:
-                cell.imageToilette.image = UIImage(named: "sanisetteExt")
+                cell.imageToilette.image = sanisetteExt
             case KEY_TOILETTES:
-                cell.imageToilette.image = UIImage(named: "toiletteExt")
+                cell.imageToilette.image = toiletExt
+            case KEY_WCPERM:
+                cell.imageToilette.image = WcPublic1
+            case KEY_URINOIR:
+                cell.imageToilette.image = urinoirMan1
+            case KEY_URINOIRFEMME:
+                cell.imageToilette.image = urinoirWoman
             default:
-                cell.imageToilette.image = UIImage(named: "WelcomParis")
+                cell.imageToilette.image = UIImage()
             }
             return cell
         case 7:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_IMAGE2, for: indexPath) as! ImageTVCell
             switch selectedToilette?.title {
             case KEY_SANISETTES:
-                cell.imageToilette.image = UIImage(named: "sanisetteInt")
+                cell.imageToilette.image = sanisetteInt
             case KEY_TOILETTES:
-                cell.imageToilette.image = UIImage(named: "toiletteInt")
+                cell.imageToilette.image = toiletInt
+            case KEY_WCPERM:
+                cell.imageToilette.image = WcPublic2
+            case KEY_URINOIR:
+                cell.imageToilette.image = urinoirMan2
             default:
-                cell.imageToilette.image = UIImage(named: "NothingElse")
+                cell.imageToilette.image = UIImage()
             }
             return cell
         case 8:
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_IMAGE3, for: indexPath) as! ImageTVCell
             switch selectedToilette?.title {
             case KEY_SANISETTES:
-                cell.imageToilette.image = UIImage(named: "sanisetteButton")
-            case KEY_TOILETTES:
-                cell.imageToilette.image = UIImage(named: "NothingElse")
-            default:
-                cell.imageToilette.image = UIImage()
-            }
-            return cell
-        case 9:
-            let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_IMAGE4, for: indexPath) as! ImageTVCell
-            switch selectedToilette?.title {
-            case KEY_SANISETTES:
-                cell.imageToilette.image = UIImage(named: "NothingElse")
+                cell.imageToilette.image = sanisetteButton
             default:
                 cell.imageToilette.image = UIImage()
             }
