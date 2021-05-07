@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "type"; ObjectID = "3Vp-wU-Kea"; */
+"3Vp-wU-Kea.text" = "type";
+
+/* Class = "UILabel"; text = "adresse"; ObjectID = "QZI-ne-xg9"; */
+"QZI-ne-xg9.text" = "adresse";
+
+/* Class = "UIButton"; normalTitle = "itinéraire pour s'y rendre"; ObjectID = "RmD-5H-oci"; */
+"RmD-5H-oci.normalTitle" = "itinéraire pour s'y rendre";
+
+/* Class = "UILabel"; text = "horaire"; ObjectID = "T2A-Fr-kd9"; */
+"T2A-Fr-kd9.text" = "horaire";
+
+/* Class = "UINavigationItem"; title = "Toilettes Gratuites à Paris"; ObjectID = "l0z-7a-kOB"; */
+"l0z-7a-kOB.title" = "Toilettes Gratuites à Paris";

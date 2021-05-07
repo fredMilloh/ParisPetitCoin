@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Free toilets in Paris-->
+        <!--Toilettes Gratuites à Paris-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ParisPetitCoin" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sVo-J3-yum" secondAttribute="trailing" id="mOq-b0-QRJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Free toilets in Paris" id="l0z-7a-kOB"/>
+                    <navigationItem key="navigationItem" title="Toilettes Gratuites à Paris" id="l0z-7a-kOB"/>
                     <connections>
                         <outlet property="mapView" destination="sVo-J3-yum" id="CtM-zG-ktR"/>
                     </connections>
@@ -57,25 +57,25 @@
                         </wkWebView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HoraireCell" id="SWR-7M-kEI" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="374.33333396911621" width="390" height="56"/>
+                                <rect key="frame" x="0.0" y="374.33333396911621" width="390" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SWR-7M-kEI" id="imE-zD-TTo">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mnN-id-K3f">
-                                            <rect key="frame" x="15" y="8" width="40" height="40"/>
+                                            <rect key="frame" x="15" y="16" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="BJe-LQ-f6K"/>
                                                 <constraint firstAttribute="width" constant="40" id="cqy-qm-0Qw"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="horaire" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2A-Fr-kd9">
-                                            <rect key="frame" x="75" y="8" width="50.666666666666657" height="40"/>
+                                            <rect key="frame" x="75" y="8" width="48" height="56"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="DQU-rD-vTv"/>
+                                                <constraint firstAttribute="height" constant="56" id="DQU-rD-vTv"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -96,23 +96,23 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TypeCell" id="OZe-5W-1PS" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="430.33333396911621" width="390" height="56"/>
+                                <rect key="frame" x="0.0" y="446.33333396911621" width="390" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OZe-5W-1PS" id="m46-w6-Eb2">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vp-wU-Kea">
-                                            <rect key="frame" x="75" y="8" width="32.333333333333343" height="40"/>
+                                            <rect key="frame" x="75" y="8" width="30.666666666666671" height="56"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="hry-0g-xtb"/>
+                                                <constraint firstAttribute="height" constant="56" id="hry-0g-xtb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7yO-Ky-0hi">
-                                            <rect key="frame" x="15" y="8" width="40" height="40"/>
+                                            <rect key="frame" x="15" y="16" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="0vZ-Zo-DiL"/>
                                                 <constraint firstAttribute="width" constant="40" id="Hf8-m0-7di"/>
@@ -140,25 +140,25 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccesCell" id="IBw-eE-6CA" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="486.33333396911621" width="390" height="78"/>
+                                <rect key="frame" x="0.0" y="518.33333396911621" width="390" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IBw-eE-6CA" id="Z4U-J1-779">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rq2-hy-hT2">
-                                            <rect key="frame" x="15" y="19" width="40" height="40"/>
+                                            <rect key="frame" x="15" y="17" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="eIe-Yt-K8Y"/>
                                                 <constraint firstAttribute="width" constant="40" id="uaD-7z-oOs"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yb5-g8-FeH">
-                                            <rect key="frame" x="75" y="19" width="0.0" height="40"/>
+                                            <rect key="frame" x="75" y="19" width="0.0" height="36"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="kD1-h2-pWM"/>
+                                                <constraint firstAttribute="height" constant="36" id="kD1-h2-pWM"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -179,7 +179,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdresseCell" id="Mul-rd-vgC" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="564.33333396911621" width="390" height="56"/>
+                                <rect key="frame" x="0.0" y="592.33333396911621" width="390" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mul-rd-vgC" id="nmT-sc-pwd">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
@@ -218,7 +218,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoCell" rowHeight="80" id="YDq-YA-5hH" customClass="GoTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="620.33333396911621" width="390" height="80"/>
+                                <rect key="frame" x="0.0" y="648.33333396911621" width="390" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YDq-YA-5hH" id="mHP-DQ-375">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="80"/>
@@ -230,7 +230,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="Bfw-87-nYD"/>
                                             </constraints>
-                                            <state key="normal" title="itinéraire pour s'y rendre">
+                                            <state key="normal" title="route to go there">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -253,7 +253,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RelaisCell" id="544-24-tqa" customClass="LabelTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="700.33333396911621" width="390" height="58"/>
+                                <rect key="frame" x="0.0" y="728.33333396911621" width="390" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="544-24-tqa" id="loP-Ba-th0">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="58"/>
@@ -293,7 +293,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image1Cell" rowHeight="270" id="mVO-38-yG1" customClass="ImageTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="758.33333396911621" width="390" height="270"/>
+                                <rect key="frame" x="0.0" y="786.33333396911621" width="390" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mVO-38-yG1" id="3Mk-fu-cka">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
@@ -325,7 +325,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image2Cell" rowHeight="270" id="4hZ-Pf-5Ho" customClass="ImageTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1028.3333339691162" width="390" height="270"/>
+                                <rect key="frame" x="0.0" y="1056.3333339691162" width="390" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4hZ-Pf-5Ho" id="YZi-0c-fbp">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
@@ -357,7 +357,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image3Cell" rowHeight="270" id="Lml-h7-Di4" customClass="ImageTVCell" customModule="ParisPetitCoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1298.3333339691162" width="390" height="270"/>
+                                <rect key="frame" x="0.0" y="1326.3333339691162" width="390" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lml-h7-Di4" id="CO2-ne-wDX">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>

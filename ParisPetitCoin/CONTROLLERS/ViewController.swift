@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             let horaire = toilette.fields.horaire ?? ""
             var horairs = horaire
             if horaire == KEY_FICHE {
-                horairs = "Hours indicated on the website"
+                horairs = "select i for opening hours".localized()
             }
             let url = toilette.fields.url ?? ""
             let relaisBB = toilette.fields.relaisBB ?? ""
@@ -91,7 +91,7 @@ extension ViewController: CLLocationManagerDelegate {
         
         mapView.setRegion(region, animated: true)
 
-        let userAnnotation = ToiletteAnnotation(title: KEY_ME, subtitle: "I'm Here 😉", coordinate: center, url: "", arrondissement: "", adresse: "", horaire: "", accesPMR: "", relais_bebe: "")
+        let userAnnotation = ToiletteAnnotation(title: KEY_ME, subtitle: "I'm Here 😉".localized(), coordinate: center, url: "", arrondissement: "", adresse: "", horaire: "", accesPMR: "", relais_bebe: "")
         mapView.addAnnotation(userAnnotation)
         
         mapView.showsCompass = true

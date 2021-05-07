@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  ParisPetitCoin
+
+  Created by fred on 07/05/2021.
+  
+*/
+"opening hours are indicated on the website above" = "horaires d'ouvertures indiquées sur le site ci-dessus";
+"opening hours are unknown" = "horaires d'ouvertures inconnues";
+"opening hours are variable. About 9h00 am - 10h00 pm" = "horaires d'ouvertures variables. Environ 9h00 - 22h00";
+"opening hours are" = "horaires d'ouvertures : ";
+"paid toilets" = "toilettes payantes";
+"free mixed toilet. A person is present for all information." = "toilettes mixtes gratuites. Une personne est présente pour toute information";
+"free women's urinal" = "urinoir femme gratuit";
+"free men's urinal" = "urinoir homme gratuit";
+"free mixed toilet" = "toilettes mixtes gratuites";
+"equipped for people with reduced mobility." = "toilettes équipées pour personne à mobilité réduite";
+"toilet without suitable equipment" = "toilettes sans équipements adaptés";
+"🚼  Relay baby" = "🚼 relais change bébé";
+"I'm Here 😉" = "Je suis ici 😉";
+"select i for opening hours" = "sélectionner i pour les horaires";

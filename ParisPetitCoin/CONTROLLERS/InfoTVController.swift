@@ -73,16 +73,16 @@ class InfoTVController: UITableViewController {
             var horaire = selectedToilette?.horaire
             let type = selectedToilette?.title
             if horaire == KEY_FICHE {
-                horaire = "opening hours are indicated on the website above"
+                horaire = "opening hours are indicated on the website above".localized()
                 cell.infoLabel.text = horaire
             } else if horaire == "" {
                 if type == KEY_LAVATORY {
-                    cell.infoLabel.text = "opening hours are unknown"
+                    cell.infoLabel.text = "opening hours are unknown".localized()
                 } else if type == KEY_WCPERM {
-                    cell.infoLabel.text = "opening hours are variable. About 9h00 am - 10h00 pm"
+                    cell.infoLabel.text = "opening hours are variable. About 9h00 am - 10h00 pm".localized()
                 }
             } else {
-                cell.infoLabel.text = "opening hours are" + " " + (horaire ?? "unknow")
+                cell.infoLabel.text = "opening hours are".localized() + " " + (horaire ?? "unknow")
             }
             return cell
         case 1:
@@ -91,17 +91,17 @@ class InfoTVController: UITableViewController {
             cell.iconImage.image = typeIcon
             switch type {
             case KEY_LAVATORY:
-                cell.infoLabel.text = "paid toilets"
+                cell.infoLabel.text = "paid toilets".localized()
             case KEY_WCPERM:
-                cell.infoLabel.text = "free mixed toilet. A person is present for all information."
+                cell.infoLabel.text = "free mixed toilet. A person is present for all information.".localized()
             case KEY_URINOIRFEMME:
-                cell.infoLabel.text = "free women's toilet"
+                cell.infoLabel.text = "free women's urinal".localized()
             case KEY_URINOIR:
-                cell.infoLabel.text = "free men's toilet"
+                cell.infoLabel.text = "free men's urinal".localized()
             case KEY_TOILETTES:
-                cell.infoLabel.text = "free mixed toilet"
+                cell.infoLabel.text = "free mixed toilet".localized()
             case KEY_SANISETTES:
-                cell.infoLabel.text = "free mixed toilet"
+                cell.infoLabel.text = "free mixed toilet".localized()
             default:
                 cell.infoLabel.text = "Undefined"
             }
@@ -111,9 +111,9 @@ class InfoTVController: UITableViewController {
             cell.iconImage.image = disabledIcon
             let acces = selectedToilette?.accesPMR
             if acces == KEY_OUI {
-                cell.infoLabel.text = "equipped for people with reduced mobility."
+                cell.infoLabel.text = "equipped for people with reduced mobility.".localized()
             } else {
-                cell.infoLabel.text = "Classic toilets. No specific equipment"
+                cell.infoLabel.text = "toilet without suitable equipment".localized()
             }
             return cell
         case 3:
@@ -135,7 +135,7 @@ class InfoTVController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_RELAIS, for: indexPath) as! LabelTVCell
             let relais = selectedToilette?.relais_bebe
             if relais == KEY_OUI {
-                cell.infoLabel.text = "🚼  Relay baby"
+                cell.infoLabel.text = "🚼  Relay baby".localized()
             }
             return cell
         case 6:
@@ -184,4 +184,9 @@ class InfoTVController: UITableViewController {
         }
     }
    
+}
+extension String {
+    func localized() -> String {
+        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
+    }
 }
