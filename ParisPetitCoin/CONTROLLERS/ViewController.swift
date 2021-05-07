@@ -79,7 +79,7 @@ class ViewController: UIViewController {
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-//locationManager.stopUpdatingLocation()
+            locationManager.stopUpdatingLocation()
             configureRegion(location)
         }
     }
@@ -112,14 +112,14 @@ extension ViewController: MKMapViewDelegate {
             //add button on the right annotationView
             let button = UIButton(type: .detailDisclosure)
             annotationView.rightCalloutAccessoryView = button
-            
+/*
             //indicate number of cumulate pins
             if #available(iOS 11.0, *) {
                 annotationView.clusteringIdentifier = ""
             } else {
                 annotationView.annotation = annotation
             }
-            
+*/
         switch annotation.title {
         case KEY_SANISETTES:
             annotationView.markerTintColor = .systemGreen

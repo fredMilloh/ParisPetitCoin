@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Free toilets in Paris-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ParisPetitCoin" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sVo-J3-yum" secondAttribute="trailing" id="mOq-b0-QRJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="l0z-7a-kOB"/>
+                    <navigationItem key="navigationItem" title="Free toilets in Paris" id="l0z-7a-kOB"/>
                     <connections>
                         <outlet property="mapView" destination="sVo-J3-yum" id="CtM-zG-ktR"/>
                     </connections>
@@ -80,6 +80,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="T2A-Fr-kd9" secondAttribute="trailing" constant="25" id="13K-p5-eOQ"/>
                                         <constraint firstItem="mnN-id-K3f" firstAttribute="centerY" secondItem="imE-zD-TTo" secondAttribute="centerY" id="3kC-Tb-2A2"/>
@@ -123,6 +124,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="3Vp-wU-Kea" firstAttribute="top" secondItem="m46-w6-Eb2" secondAttribute="top" constant="8" id="9mF-Le-u5b"/>
                                         <constraint firstItem="7yO-Ky-0hi" firstAttribute="leading" secondItem="m46-w6-Eb2" secondAttribute="leading" constant="15" id="NWH-tX-F5s"/>
@@ -228,7 +230,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="Bfw-87-nYD"/>
                                             </constraints>
-                                            <state key="normal" title="GO there with route guidance">
+                                            <state key="normal" title="itinéraire pour s'y rendre">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -408,6 +410,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kUf-y2-qYX">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                            <color key="textColor" systemColor="systemTealColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -425,6 +432,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
