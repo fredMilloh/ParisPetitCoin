@@ -11,7 +11,7 @@ import UIKit
 let KEY_Url = "https://www.data.gouv.fr/fr/datasets/r/9cf8fab8-997c-4814-9600-8c17bc3de7e0"
 
 //Keys
-let KEY_ME = "me"
+let KEY_ME = "me".localized()
 let KEY_SANISETTES = "SANISETTE"
 let KEY_URINOIR = "URINOIR"
 let KEY_URINOIRFEMME = "URINOIR FEMME"

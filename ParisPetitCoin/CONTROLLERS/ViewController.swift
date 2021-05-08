@@ -138,7 +138,7 @@ extension ViewController: MKMapViewDelegate {
             annotationView.glyphImage = toiletPin
         case KEY_LAVATORY:
             annotationView.markerTintColor = .systemGray
-        case KEY_ME:
+        case KEY_ME.localized():
             annotationView.markerTintColor = .systemBlue
             annotationView.glyphText = "😀"
         default:
