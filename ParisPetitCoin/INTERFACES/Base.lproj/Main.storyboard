@@ -29,7 +29,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sVo-J3-yum" secondAttribute="trailing" id="mOq-b0-QRJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Toilettes Gratuites à Paris" id="l0z-7a-kOB"/>
+                    <navigationItem key="navigationItem" title="Toilettes Gratuites à Paris" id="l0z-7a-kOB">
+                        <barButtonItem key="rightBarButtonItem" id="A9U-HZ-xPk">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lHG-Ix-LUP">
+                                <rect key="frame" x="354" y="11" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="location.fill" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="recenterMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jmT-UW-KzX"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sVo-J3-yum" id="CtM-zG-ktR"/>
                     </connections>
@@ -427,6 +440,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -75,6 +75,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func recenterMap(_ sender: UIButton) {
+        guard let location = locationManager.location else { return }
+        configureRegion(location)
+    }
+    
+    
 }
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
