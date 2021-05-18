@@ -10,13 +10,19 @@ import Alamofire
 
 class Service {
     
-    fileprivate var baseUrl = KEY_Url
-    
-    typealias toilettesCallBack = (_ statut: Bool, _ toilettes: [Toilette]?) -> Void
-    
-    func getDataSet(callback: @escaping toilettesCallBack) {
-        
-        AF.request(self.baseUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
+    fileprivate var baseUrl = keyUrl
+
+    typealias ToilettesCallBack = (_ statut: Bool, _ toilettes: [Toilette]?) -> Void
+
+    func getDataSet(callback: @escaping ToilettesCallBack) {
+
+        AF.request(self.baseUrl,
+                method: .get,
+                parameters: nil,
+                encoding: URLEncoding.default,
+                headers: nil,
+                interceptor: nil,
+                requestModifier: nil)
             .response { (responseData) in
             guard let dataIn = responseData.data else {
                 callback(false, nil)

@@ -9,27 +9,22 @@ import Foundation
 
 struct Toilette: Decodable {
     let fields: Fields
-    
-    enum CodingKeys: String, CodingKey {
-        case fields = "fields"
-    }
 }
 
 struct Fields: Decodable {
     let arrondissement: String?
     let adresse: String?
-    let geo_point_2d: [Double]?
+    let geoPoint: [Double]?
     let horaire: String?
     let type: String?
     let accesPMR: String?
     let url: String?
     let relaisBB: String?
-    
-    
+
     enum CodingKeys: String, CodingKey {
         case arrondissement = "arrondissement"
         case adresse = "adresse"
-        case geo_point_2d = "geo_point_2d"
+        case geoPoint = "geo_point_2d"
         case accesPMR = "acces_pmr"
         case horaire = "horaire"
         case url = "url_fiche_equipement"
