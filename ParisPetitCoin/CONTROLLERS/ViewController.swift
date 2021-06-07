@@ -44,6 +44,8 @@ class ViewController: UIViewController {
             }
     }
 
+//MARK: - Annotations
+
     func createToiletteAnnotation(_ toilettes: [Toilette]) {
         for toilette in toilettes {
             guard let geoPoint = toilette.fields.geoPoint else { return }
@@ -87,6 +89,8 @@ class ViewController: UIViewController {
     }
 }
 
+//MARK: - Extension Region
+
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
@@ -105,7 +109,7 @@ extension ViewController: CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
 
         let userAnnotation = ToiletteAnnotation(title: keyMe,
-                                                subtitle: "I'm Here 😉".localized(),
+                                                subtitle: "",
                                                 coordinate: center,
                                                 url: "",
                                                 arrondissement: "",
@@ -119,6 +123,8 @@ extension ViewController: CLLocationManagerDelegate {
         mapView.showsUserLocation = true
     }
 }
+
+//MARK: - extension AnnotationView
 
 extension ViewController: MKMapViewDelegate {
 
@@ -161,7 +167,7 @@ extension ViewController: MKMapViewDelegate {
             annotationView.markerTintColor = .systemGray
         case keyMe.localized():
             annotationView.markerTintColor = .systemBlue
-            annotationView.glyphText = "😀"
+            annotationView.glyphText = "⚑"
         default:
             annotationView.markerTintColor = .systemTeal
             annotationView.glyphImage = questionMarkPin
@@ -169,6 +175,8 @@ extension ViewController: MKMapViewDelegate {
         }
         return annotationView
     }
+
+// callout action
 
     func mapView(_ mapView: MKMapView,
                  annotationView view: MKAnnotationView,

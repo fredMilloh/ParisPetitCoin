@@ -16,6 +16,7 @@
 		B676B7CF262C43F30001D46F /* ToiletteAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676B7CE262C43F30001D46F /* ToiletteAnnotation.swift */; };
 		B6AE2AED2645BE36009CE1E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6AE2AEF2645BE36009CE1E0 /* Localizable.strings */; };
 		B6AE2AF12645DCCC009CE1E0 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE2AF02645DCCC009CE1E0 /* Ext+String.swift */; };
+		B6AE2BA22656E0EA009CE1E0 /* ToiletteTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE2BA12656E0EA009CE1E0 /* ToiletteTestCase.swift */; };
 		B6CF4E6B261C62050005CE89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6A261C62050005CE89 /* AppDelegate.swift */; };
 		B6CF4E6D261C62050005CE89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */; };
 		B6CF4E6F261C62050005CE89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF4E6E261C62050005CE89 /* ViewController.swift */; };
@@ -26,6 +27,16 @@
 		B6E1382B261CA4D100F5B9A7 /* Toilette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1382A261CA4D100F5B9A7 /* Toilette.swift */; };
 		B6FE4DA8262CAD2600E39864 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FE4DA7262CAD2600E39864 /* MapKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6AE2B9B2656DE4C009CE1E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6CF4E5F261C62050005CE89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6CF4E66261C62050005CE89;
+			remoteInfo = ParisPetitCoin;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0FBC87904716D4C039940A75 /* Pods_ParisPetitCoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParisPetitCoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +52,10 @@
 		B6AE2AEA2645BDEE009CE1E0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B6AE2AEE2645BE36009CE1E0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6AE2AF02645DCCC009CE1E0 /* Ext+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
+		B6AE2B962656DE4C009CE1E0 /* ParisPetitCoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParisPetitCoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6AE2B9A2656DE4C009CE1E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6AE2BA02656E0EA009CE1E0 /* ParisPetitCoinTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParisPetitCoinTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		B6AE2BA12656E0EA009CE1E0 /* ToiletteTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletteTestCase.swift; sourceTree = "<group>"; };
 		B6CF4E67261C62050005CE89 /* ParisPetitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParisPetitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CF4E6A261C62050005CE89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6CF4E6C261C62050005CE89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +70,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B6AE2B932656DE4C009CE1E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6CF4E64261C62050005CE89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,10 +107,21 @@
 			path = INTERFACES;
 			sourceTree = "<group>";
 		};
+		B6AE2B972656DE4C009CE1E0 /* ParisPetitCoinTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE2B9A2656DE4C009CE1E0 /* Info.plist */,
+				B6AE2BA12656E0EA009CE1E0 /* ToiletteTestCase.swift */,
+				B6AE2BA02656E0EA009CE1E0 /* ParisPetitCoinTests-Bridging-Header.h */,
+			);
+			path = ParisPetitCoinTests;
+			sourceTree = "<group>";
+		};
 		B6CF4E5E261C62050005CE89 = {
 			isa = PBXGroup;
 			children = (
 				B6CF4E69261C62050005CE89 /* ParisPetitCoin */,
+				B6AE2B972656DE4C009CE1E0 /* ParisPetitCoinTests */,
 				B6CF4E68261C62050005CE89 /* Products */,
 				C096FF360DCD34471186A04D /* Pods */,
 				4BC0191AD5E5A2EE355716AD /* Frameworks */,
@@ -99,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				B6CF4E67261C62050005CE89 /* ParisPetitCoin.app */,
+				B6AE2B962656DE4C009CE1E0 /* ParisPetitCoinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +212,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B6AE2B952656DE4C009CE1E0 /* ParisPetitCoinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6AE2B9F2656DE4C009CE1E0 /* Build configuration list for PBXNativeTarget "ParisPetitCoinTests" */;
+			buildPhases = (
+				B6AE2B922656DE4C009CE1E0 /* Sources */,
+				B6AE2B932656DE4C009CE1E0 /* Frameworks */,
+				B6AE2B942656DE4C009CE1E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6AE2B9C2656DE4C009CE1E0 /* PBXTargetDependency */,
+			);
+			name = ParisPetitCoinTests;
+			productName = ParisPetitCoinTests;
+			productReference = B6AE2B962656DE4C009CE1E0 /* ParisPetitCoinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B6CF4E66261C62050005CE89 /* ParisPetitCoin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6CF4E7B261C620B0005CE89 /* Build configuration list for PBXNativeTarget "ParisPetitCoin" */;
@@ -203,9 +255,14 @@
 		B6CF4E5F261C62050005CE89 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					B6AE2B952656DE4C009CE1E0 = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+						TestTargetID = B6CF4E66261C62050005CE89;
+					};
 					B6CF4E66261C62050005CE89 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -226,11 +283,19 @@
 			projectRoot = "";
 			targets = (
 				B6CF4E66261C62050005CE89 /* ParisPetitCoin */,
+				B6AE2B952656DE4C009CE1E0 /* ParisPetitCoinTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B6AE2B942656DE4C009CE1E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6CF4E65261C62050005CE89 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +352,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B6AE2B922656DE4C009CE1E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6AE2BA22656E0EA009CE1E0 /* ToiletteTestCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6CF4E63261C62050005CE89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +380,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6AE2B9C2656DE4C009CE1E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6CF4E66261C62050005CE89 /* ParisPetitCoin */;
+			targetProxy = B6AE2B9B2656DE4C009CE1E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B6AE2AEF2645BE36009CE1E0 /* Localizable.strings */ = {
@@ -338,6 +419,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B6AE2B9D2656DE4C009CE1E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZU2A8P99A;
+				INFOPLIST_FILE = ParisPetitCoinTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fred.ParisPetitCoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ParisPetitCoinTests/ParisPetitCoinTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParisPetitCoin.app/ParisPetitCoin";
+			};
+			name = Debug;
+		};
+		B6AE2B9E2656DE4C009CE1E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZU2A8P99A;
+				INFOPLIST_FILE = ParisPetitCoinTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fred.ParisPetitCoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ParisPetitCoinTests/ParisPetitCoinTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParisPetitCoin.app/ParisPetitCoin";
+			};
+			name = Release;
+		};
 		B6CF4E79261C620B0005CE89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -503,6 +631,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B6AE2B9F2656DE4C009CE1E0 /* Build configuration list for PBXNativeTarget "ParisPetitCoinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6AE2B9D2656DE4C009CE1E0 /* Debug */,
+				B6AE2B9E2656DE4C009CE1E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B6CF4E62261C62050005CE89 /* Build configuration list for PBXProject "ParisPetitCoin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

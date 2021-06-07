@@ -30,7 +30,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Free Toilet in Paris" id="l0z-7a-kOB">
-                        <barButtonItem key="rightBarButtonItem" id="A9U-HZ-xPk">
+                        <barButtonItem key="rightBarButtonItem" title="Item" width="40" id="A9U-HZ-xPk">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lHG-Ix-LUP">
                                 <rect key="frame" x="354" y="11" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -251,6 +251,9 @@
                                                     <integer key="value" value="20"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="goButtonPressedWithSender:" destination="YDq-YA-5hH" eventType="touchUpInside" id="7E1-1e-XBP"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

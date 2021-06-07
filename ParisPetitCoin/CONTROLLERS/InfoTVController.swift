@@ -23,14 +23,16 @@ class InfoTVController: UITableViewController {
         setupWebView()
     }
 
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?,
+//MARK: - ProgressView
+
+    internal override func observeValue(forKeyPath keyPath: String?, of object: Any?,
                                change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
             progressView.progress = Float(webView.estimatedProgress)
         }
     }
 
-    func setupProgressView() {
+    private func setupProgressView() {
 
         progressView = UIProgressView(progressViewStyle: .default)
         webView.addSubview(progressView)
@@ -44,7 +46,9 @@ class InfoTVController: UITableViewController {
         webView.addObserver(self, forKeyPath: keyPath, options: .new, context: nil)
     }
 
-    func setupWebView() {
+//MARK: - WebView
+
+    private func setupWebView() {
         let url = selectedToilette?.url
         if url == "" {
             webView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 0)
@@ -54,7 +58,7 @@ class InfoTVController: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -90,7 +94,9 @@ class InfoTVController: UITableViewController {
         }
     }
 
-    func setupHoraire(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
+//MARK: - UITableViewCell functions
+
+    private func setupHoraire(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idHoraire,
                                                        for: indexPath) as? LabelTVCell else {
                                                         return LabelTVCell() }
@@ -107,12 +113,12 @@ class InfoTVController: UITableViewController {
                 cell.infoLabel.text = "opening hours are variable. About 9h00 am - 10h00 pm".localized()
             }
         } else {
-            cell.infoLabel.text = "opening hours are".localized() + " " + (horaire ?? "unknow")
+            cell.infoLabel.text = "opening hours are".localized() + "\n" + (horaire ?? "unknow")
         }
         return cell
     }
 
-    func setupType(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
+    private func setupType(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idType,
                                                        for: indexPath) as? LabelTVCell else {
                                                         return LabelTVCell() }
@@ -137,21 +143,17 @@ class InfoTVController: UITableViewController {
         return cell
     }
 
-    func setupAcces(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
+    private func setupAcces(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idAcces,
                                                        for: indexPath) as? LabelTVCell else {
                                                         return LabelTVCell() }
         cell.iconImage.image = disabledIcon
         let acces = selectedToilette?.accesPMR
-        if acces == keyOui {
-            cell.infoLabel.text = "equipped for people with reduced mobility.".localized()
-        } else {
-            cell.infoLabel.text = "toilet without suitable equipment".localized()
-        }
+        cell.infoLabel.text = acces == keyOui ? "equipped for people with reduced mobility.".localized() : "toilet without suitable equipment".localized()
         return cell
     }
 
-    func setupAdresse(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
+    private func setupAdresse(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idAdresse,
                                                        for: indexPath) as? LabelTVCell else {
                                                         return LabelTVCell() }
@@ -162,7 +164,7 @@ class InfoTVController: UITableViewController {
         return cell
     }
 
-    func setupGo(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> GoTVCell {
+    private func setupGo(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> GoTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idGo,
                                                        for: indexPath) as? GoTVCell else {
                                                         return GoTVCell() }
@@ -174,7 +176,7 @@ class InfoTVController: UITableViewController {
         return cell
     }
 
-    func setupRelais(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
+    private func setupRelais(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> LabelTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idRelais,
                                                        for: indexPath) as? LabelTVCell else {
                                                         return LabelTVCell() }
@@ -185,7 +187,7 @@ class InfoTVController: UITableViewController {
         return cell
     }
 
-    func setupImage1(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ImageTVCell {
+    private func setupImage1(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ImageTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idImage1,
                                                        for: indexPath) as? ImageTVCell else {
                                                         return ImageTVCell() }
@@ -206,7 +208,7 @@ class InfoTVController: UITableViewController {
         return cell
     }
 
-    func setupImage2(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ImageTVCell {
+    private func setupImage2(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ImageTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idImage2,
                                                        for: indexPath) as? ImageTVCell else {
                                                         return ImageTVCell() }
@@ -225,7 +227,7 @@ class InfoTVController: UITableViewController {
         return cell
     }
 
-    func setupImage3(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ImageTVCell {
+    private func setupImage3(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ImageTVCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idImage3,
                                                        for: indexPath) as? ImageTVCell else {
                                                         return ImageTVCell() }
